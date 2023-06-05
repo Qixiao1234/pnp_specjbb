@@ -1,0 +1,50 @@
+
+--------------- Host Reference_IntelXeon_Gold6150_@2.70GHz -----------------
+
+> Memory MLC Loaded Latency Test: 
+Intel(R) Memory Latency Checker - v3.1a
+Command line parameters: --loaded_latency 
+
+Using buffer size of 100.000MB/thread for reads and an additional 100.000MB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Using Read-only traffic type
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	188.08	 415099.2
+ 00002	188.53	 416231.2
+ 00008	186.61	 415849.8
+ 00015	185.87	 415377.6
+ 00050	182.47	 410672.5
+ 00100	149.74	 377504.3
+ 00200	113.33	 251452.1
+ 00300	104.89	 179920.4
+ 00400	102.82	 139209.0
+ 00500	101.31	 113884.5
+ 00700	 98.93	  83114.8
+ 01000	 96.92	  59196.4
+ 01300	 95.52	  46355.1
+ 01700	 95.07	  35718.8
+ 02500	 93.99	  24702.1
+ 03500	 93.40	  17900.1
+ 05000	 92.89	  12769.4
+ 09000	 91.97	   7411.4
+ 20000	 91.17	   3731.9
+
+> CPU Turbo Test: 
+stress-ng: info:  [147386] dispatching hogs: 1 cpu
+Package	Core	CPU	Avg_MHz	Busy%	Bzy_MHz	TSC_MHz	IRQ	SMI	C1	C1E	C6	C1%	C1E%	C6%	CPU%c1	CPU%c6	CoreTmp	PkgTmp	Pkg%pc2	Pkg%pc6	PkgWatt	RAMWatt	PKG_%	RAM_%
+-	-	-	28	0.79	3507	2698	8910	0	207	818	6485	0.08	0.65	98.38	2.48	96.73	75	76	71.76	0.00	232.93	117.63	0.00	0.00
+-	-	-	28	0.83	3442	2679	10335	0	438	1149	7678	0.15	0.82	97.43	3.06	96.11	73	74	66.68	0.00	230.43	119.56	0.00	0.00
+-	-	-	29	0.84	3448	2684	11189	0	284	1228	8560	0.08	0.77	97.73	2.89	96.28	75	75	65.82	0.00	229.73	120.03	0.00	0.00
+-	-	-	31	0.92	3425	2687	11159	0	101	1185	8322	0.02	0.88	97.71	3.04	96.04	71	71	66.68	0.00	229.51	119.78	0.00	0.00
+stress-ng: info:  [147386] successful run completed in 9.00s
+stress-ng: info:  [147412] dispatching hogs: 144 cpu
+-	-	-	1940	60.03	3368	2590	180802	0	41	629	4541	0.00	0.30	37.86	2.19	37.77	84	84	25.07	0.00	514.05	145.76	156.68	0.00
+-	-	-	3230	99.67	3226	2713	331816	0	0	9	15	0.00	0.00	0.00	0.33	0.00	83	83	0.00	0.00	683.53	176.03	385.41	0.00
+stress-ng: info:  [147412] successful run completed in 5.09s
+stress-ng: info:  [147412] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [147412]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [147412] cpu              150241      5.01    713.23      0.01     29963.43       210.65

@@ -1,0 +1,69 @@
+> svrchart:
+new Chartist.Line('.$ct_name', {
+  labels: [$ct_labels],
+  series: [
+    $ct_vals
+  ]
+}, {
+  axisX: {
+    type: Chartist.AutoScaleAxis,
+    onlyInteger: true
+  },
+  lineSmooth: Chartist.Interpolation.none({
+  }),
+  chartPadding: {
+    top: 20,
+    right: 0,
+    bottom: 30,
+    left: 30
+  },
+  plugins: [
+    Chartist.plugins.tooltip({
+        anchorToPoint: true,
+    }),
+    Chartist.plugins.legend({
+        legendNames: [$ct_hosts],
+    }),
+    Chartist.plugins.ctAxisTitle({
+      axisX: {
+        axisTitle: '$ct_xtitle',
+        axisClass: 'ct-axis-title',
+        offset: {
+          x: 0,
+          y: 50
+        },
+        textAnchor: 'middle'
+      },
+      axisY: {
+        axisTitle: '$ct_ytitle',
+        axisClass: 'ct-axis-title',
+        offset: {
+          x: 0,
+          y: 0
+        },
+        textAnchor: 'middle',
+        flipTitle: false
+      }
+    })
+  ]
+});
+
+> memtxt:
+<h4 id="memguide">Guidelines for optimizing Memory Performance:</h4>
+<ol>
+<li>Use identical DIMM types throughout the platform:</li>
+<ul>
+<li>Same size, speed, and number of ranks</li>
+</ul>
+<li>Maximize the same number of channels populated in each memory controller</li>
+<li>Use a "balanced" platform configuration:</li>
+<ul>
+<li>All available memory channels populated equally</li>
+<li>Identical DIMMs in all locations (size/speed/rank)</li>
+</ul>
+<li>Use a "near-balanced" platform configuration:</li>
+<ul>
+<li>All available memory channels and sockets populated equally</li>
+<li>Identical DIMMs in each "row", but different sized DIMMs in row #1 vs. row #2</li>
+</ul>
+</ol>

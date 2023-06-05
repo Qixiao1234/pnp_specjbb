@@ -1,0 +1,51 @@
+
+--------------- Host Reference_IntelXeon_E5_2699_v4_@2.20GHz -----------------
+
+> Memory MLC Loaded Latency Test: 
+Intel(R) Memory Latency Checker - v3.1a
+Command line parameters: --loaded_latency 
+
+Using buffer size of 100.000MB/thread for reads and an additional 100.000MB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Using Read-only traffic type
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	260.98	 139835.7
+ 00002	262.44	 139825.3
+ 00008	257.82	 139853.9
+ 00015	257.11	 139837.6
+ 00050	247.12	 139495.2
+ 00100	236.42	 138789.6
+ 00200	169.37	 134683.4
+ 00300	110.05	  97872.2
+ 00400	 99.70	  74214.7
+ 00500	 95.21	  60044.8
+ 00700	 90.75	  43579.0
+ 01000	 87.80	  30942.2
+ 01300	 86.57	  24066.8
+ 01700	 85.33	  18635.3
+ 02500	 83.54	  12963.6
+ 03500	 82.10	   9507.2
+ 05000	 80.98	   6919.6
+ 09000	 80.25	   4199.6
+ 20000	 79.38	   2338.6
+
+> CPU Turbo Test: 
+stress-ng: info:  [12898] dispatching hogs: 1 cpu
+Package    Core     CPU Avg_MHz   %Busy Bzy_MHz TSC_MHz     SMI  CPU%c1  CPU%c3  CPU%c6  CPU%c7 CoreTmp  PkgTmp Pkg%pc2 Pkg%pc3 Pkg%pc6 Pkg%pc7 PkgWatt RAMWatt   PKG_%   RAM_%
+-       -       -      41    1.15    3572    2195       0    1.37    0.01   97.47    0.00      73      74   49.31    0.00    0.00    0.00   88.78   16.37    0.00    0.00
+-       -       -      49    1.40    3530    2195       0    2.37    0.27   95.96    0.00      70      70   41.64    0.00    0.00    0.00   90.91   16.45    0.00    0.00
+-       -       -      41    1.15    3576    2195       0    1.32    0.93   96.60    0.00      71      72   49.49    0.00    0.00    0.00   85.70   16.37    0.00    0.00
+-       -       -      49    1.39    3518    2195       0    2.61    0.30   95.70    0.00      71      71   41.92    0.00    0.00    0.00   90.18   16.40    0.00    0.00
+stress-ng: info:  [12898] successful run completed in 9.03s
+stress-ng: info:  [13078] dispatching hogs: 88 cpu
+-       -       -    1348   48.08    2809    2196       0    1.60    0.01   50.31    0.00      74      74   25.16    0.00    0.00    0.00  183.95   16.73    0.00    0.00
+-       -       -    2792   99.99    2799    2195       0    0.01    0.00    0.00    0.00      76      76    0.00    0.00    0.00    0.00  294.18   17.14    0.00    0.00
+-       -       -    2749   99.79    2761    2195       0    0.21    0.00    0.00    0.00      77      77    0.00    0.00    0.00    0.00  291.44   17.07    0.00    0.00
+stress-ng: info:  [13078] successful run completed in 5.14s
+stress-ng: info:  [13078] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [13078]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [13078] cpu               69887      5.02    440.98      0.00     13914.17       158.48

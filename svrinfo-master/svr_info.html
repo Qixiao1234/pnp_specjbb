@@ -1,0 +1,1234 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Server Info Report.">
+
+    <title>Server Info</title>
+        
+    <style>
+/*!
+Pure v0.6.2
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+/*!
+normalize.css v^3.0 | MIT License | git.io/normalize
+Copyright (c) Nicolas Gallagher and Jonathan Neal
+*/
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */img,legend{border:0}legend,td,th{padding:0}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre,textarea{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}table{border-collapse:collapse;border-spacing:0}.hidden,[hidden]{display:none!important}.pure-img{max-width:100%;height:auto;display:block}
+
+/*!
+Pure v0.6.2
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-menu{box-sizing:border-box}.pure-menu-fixed{position:fixed;left:0;top:0;z-index:3}.pure-menu-item,.pure-menu-list{position:relative}.pure-menu-list{list-style:none;margin:0;padding:0}.pure-menu-item{padding:0;margin:0;height:100%}.pure-menu-heading,.pure-menu-link{display:block;text-decoration:none;white-space:nowrap}.pure-menu-horizontal{width:100%;white-space:nowrap}.pure-menu-horizontal .pure-menu-list{display:inline-block}.pure-menu-horizontal .pure-menu-heading,.pure-menu-horizontal .pure-menu-item,.pure-menu-horizontal .pure-menu-separator{display:inline-block;zoom:1;vertical-align:middle}.pure-menu-item .pure-menu-item{display:block}.pure-menu-children{display:none;position:absolute;left:100%;top:0;margin:0;padding:0;z-index:3}.pure-menu-horizontal .pure-menu-children{left:0;top:auto;width:inherit}.pure-menu-active>.pure-menu-children,.pure-menu-allow-hover:hover>.pure-menu-children{display:block;position:absolute}.pure-menu-has-children>.pure-menu-link:after{padding-left:.5em;content:"\25B8";font-size:small}.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after{content:"\25BE"}.pure-menu-scrollable{overflow-y:scroll;overflow-x:hidden}.pure-menu-scrollable .pure-menu-list{display:block}.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list{display:inline-block}.pure-menu-horizontal.pure-menu-scrollable{white-space:nowrap;overflow-y:hidden;overflow-x:auto;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;padding:.5em 0}.pure-menu-horizontal.pure-menu-scrollable::-webkit-scrollbar{display:none}.pure-menu-horizontal .pure-menu-children .pure-menu-separator,.pure-menu-separator{background-color:#ccc;height:1px;margin:.3em 0}.pure-menu-horizontal .pure-menu-separator{width:1px;height:1.3em;margin:0 .3em}.pure-menu-horizontal .pure-menu-children .pure-menu-separator{display:block;width:auto}.pure-menu-heading{text-transform:uppercase;color:#565d64}.pure-menu-link{color:#777}.pure-menu-children{background-color:#fff}.pure-menu-disabled,.pure-menu-heading,.pure-menu-link{padding:.5em 1em}.pure-menu-disabled{opacity:.5}.pure-menu-disabled .pure-menu-link:hover{background-color:transparent}.pure-menu-active>.pure-menu-link,.pure-menu-link:focus,.pure-menu-link:hover{background-color:#eee}.pure-menu-selected .pure-menu-link,.pure-menu-selected .pure-menu-link:visited{color:#000}
+
+/*!
+Pure v0.6.2
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}.pure-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}.pure-table td,.pure-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}.pure-table td:first-child,.pure-table th:first-child{border-left-width:0}.pure-table thead{background-color:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}.pure-table td{background-color:transparent}.pure-table-odd td,.pure-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}.pure-table-bordered td{border-bottom:1px solid #cbcbcb}.pure-table-bordered tbody>tr:last-child>td{border-bottom-width:0}.pure-table-horizontal td,.pure-table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}.pure-table-horizontal tbody>tr:last-child>td{border-bottom-width:0}
+
+</style>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <style>body {
+    color: #777;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    left: 0;
+    padding-left: 0;
+}
+    #layout.active #menu {
+        left: 150px;
+        width: 150px;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 800px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+}
+
+.header {
+     margin: 0;
+     color: #333;
+     text-align: center;
+     padding: 2.5em 2em 0;
+     border-bottom: 1px solid #eee;
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #ccc;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+}
+
+
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+    margin-left: -150px; /* "#menu" width */
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+    /*
+    All anchors inside the menu should be styled like this.
+    */
+    #menu a {
+        color: #999;
+        border: none;
+        padding: 0.6em 0 0.6em 0.6em;
+    }
+
+    /*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+     #menu .pure-menu,
+     #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    /*
+    Add that light border to separate items into groups.
+    */
+    #menu .pure-menu ul,
+    #menu .pure-menu .menu-item-divided {
+        border-top: 1px solid #333;
+    }
+        /*
+        Change color of the anchor links on hover/focus.
+        */
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+            background: #333;
+        }
+
+    /*
+    This styles the selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected,
+    #menu .pure-menu-heading {
+        background: #1f8dd6;
+    }
+        /*
+        This styles a link within a selected menu item `<li>`.
+        */
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+    /*
+    This styles the menu heading.
+    */
+    #menu .pure-menu-heading {
+        font-size: 110%;
+        color: #fff;
+        margin: 0;
+    }
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    position: fixed;
+    display: block; /* show this only on small screens */
+    top: 0;
+    left: 0; /* "#menu width" */
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+    .menu-link:hover,
+    .menu-link:focus {
+        background: #000;
+    }
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: 0.2em;
+    }
+
+        .menu-link span:before,
+        .menu-link span:after {
+            position: absolute;
+            margin-top: -0.6em;
+            content: " ";
+        }
+
+        .menu-link span:after {
+            margin-top: 0.6em;
+        }
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    #layout {
+        padding-left: 150px; /* left col width "#menu" */
+        left: 0;
+    }
+    #menu {
+        left: 150px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 150px;
+        display: none;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+}
+
+@media (max-width: 48em) {
+    /* Only apply this when the window is small. Otherwise, the following
+    case results in extra padding on the left:
+        * Make the window small.
+        * Tap the menu to trigger the active state.
+        * Make the window large again.
+    */
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
+}
+</style>
+    <!--<![endif]-->
+    <style>.ct-double-octave:after,.ct-major-eleventh:after,.ct-major-second:after,.ct-major-seventh:after,.ct-major-sixth:after,.ct-major-tenth:after,.ct-major-third:after,.ct-major-twelfth:after,.ct-minor-second:after,.ct-minor-seventh:after,.ct-minor-sixth:after,.ct-minor-third:after,.ct-octave:after,.ct-perfect-fifth:after,.ct-perfect-fourth:after,.ct-square:after{content:"";clear:both}.ct-label{fill:rgba(0,0,0,.4);color:rgba(0,0,0,.4);font-size:.75rem;line-height:1}.ct-grid-background,.ct-line{fill:none}.ct-chart-bar .ct-label,.ct-chart-line .ct-label{display:block;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.ct-chart-donut .ct-label,.ct-chart-pie .ct-label{dominant-baseline:central}.ct-label.ct-horizontal.ct-start{-webkit-box-align:flex-end;-webkit-align-items:flex-end;-ms-flex-align:flex-end;align-items:flex-end;-webkit-box-pack:flex-start;-webkit-justify-content:flex-start;-ms-flex-pack:flex-start;justify-content:flex-start;text-align:left;text-anchor:start}.ct-label.ct-horizontal.ct-end{-webkit-box-align:flex-start;-webkit-align-items:flex-start;-ms-flex-align:flex-start;align-items:flex-start;-webkit-box-pack:flex-start;-webkit-justify-content:flex-start;-ms-flex-pack:flex-start;justify-content:flex-start;text-align:left;text-anchor:start}.ct-label.ct-vertical.ct-start{-webkit-box-align:flex-end;-webkit-align-items:flex-end;-ms-flex-align:flex-end;align-items:flex-end;-webkit-box-pack:flex-end;-webkit-justify-content:flex-end;-ms-flex-pack:flex-end;justify-content:flex-end;text-align:right;text-anchor:end}.ct-label.ct-vertical.ct-end{-webkit-box-align:flex-end;-webkit-align-items:flex-end;-ms-flex-align:flex-end;align-items:flex-end;-webkit-box-pack:flex-start;-webkit-justify-content:flex-start;-ms-flex-pack:flex-start;justify-content:flex-start;text-align:left;text-anchor:start}.ct-chart-bar .ct-label.ct-horizontal.ct-start{-webkit-box-align:flex-end;-webkit-align-items:flex-end;-ms-flex-align:flex-end;align-items:flex-end;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center;text-anchor:start}.ct-chart-bar .ct-label.ct-horizontal.ct-end{-webkit-box-align:flex-start;-webkit-align-items:flex-start;-ms-flex-align:flex-start;align-items:flex-start;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center;text-anchor:start}.ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-start{-webkit-box-align:flex-end;-webkit-align-items:flex-end;-ms-flex-align:flex-end;align-items:flex-end;-webkit-box-pack:flex-start;-webkit-justify-content:flex-start;-ms-flex-pack:flex-start;justify-content:flex-start;text-align:left;text-anchor:start}.ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-end{-webkit-box-align:flex-start;-webkit-align-items:flex-start;-ms-flex-align:flex-start;align-items:flex-start;-webkit-box-pack:flex-start;-webkit-justify-content:flex-start;-ms-flex-pack:flex-start;justify-content:flex-start;text-align:left;text-anchor:start}.ct-chart-bar.ct-horizontal-bars .ct-label.ct-vertical.ct-start{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:flex-end;-webkit-justify-content:flex-end;-ms-flex-pack:flex-end;justify-content:flex-end;text-align:right;text-anchor:end}.ct-chart-bar.ct-horizontal-bars .ct-label.ct-vertical.ct-end{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:flex-start;-webkit-justify-content:flex-start;-ms-flex-pack:flex-start;justify-content:flex-start;text-align:left;text-anchor:end}.ct-grid{stroke:rgba(0,0,0,.2);stroke-width:1px;stroke-dasharray:2px}.ct-point{stroke-width:10px;stroke-linecap:round}.ct-line{stroke-width:4px}.ct-area{stroke:none;fill-opacity:.1}.ct-bar{fill:none;stroke-width:10px}.ct-slice-donut{fill:none;stroke-width:60px}.ct-series-a .ct-bar,.ct-series-a .ct-line,.ct-series-a .ct-point,.ct-series-a .ct-slice-donut{stroke:#5b4ff0}.ct-series-a .ct-area,.ct-series-a .ct-slice-donut-solid,.ct-series-a .ct-slice-pie{fill:#5b4ff0}.ct-series-b .ct-bar,.ct-series-b .ct-line,.ct-series-b .ct-point,.ct-series-b .ct-slice-donut{stroke:#f05b4f}.ct-series-b .ct-area,.ct-series-b .ct-slice-donut-solid,.ct-series-b .ct-slice-pie{fill:#f05b4f}.ct-series-c .ct-bar,.ct-series-c .ct-line,.ct-series-c .ct-point,.ct-series-c .ct-slice-donut{stroke:#f4c63d}.ct-series-c .ct-area,.ct-series-c .ct-slice-donut-solid,.ct-series-c .ct-slice-pie{fill:#f4c63d}.ct-series-d .ct-bar,.ct-series-d .ct-line,.ct-series-d .ct-point,.ct-series-d .ct-slice-donut{stroke:#d17905}.ct-series-d .ct-area,.ct-series-d .ct-slice-donut-solid,.ct-series-d .ct-slice-pie{fill:#d17905}.ct-series-e .ct-bar,.ct-series-e .ct-line,.ct-series-e .ct-point,.ct-series-e .ct-slice-donut{stroke:#453d3f}.ct-series-e .ct-area,.ct-series-e .ct-slice-donut-solid,.ct-series-e .ct-slice-pie{fill:#453d3f}.ct-series-f .ct-bar,.ct-series-f .ct-line,.ct-series-f .ct-point,.ct-series-f .ct-slice-donut{stroke:#59922b}.ct-series-f .ct-area,.ct-series-f .ct-slice-donut-solid,.ct-series-f .ct-slice-pie{fill:#59922b}.ct-series-g .ct-bar,.ct-series-g .ct-line,.ct-series-g .ct-point,.ct-series-g .ct-slice-donut{stroke:#0544d3}.ct-series-g .ct-area,.ct-series-g .ct-slice-donut-solid,.ct-series-g .ct-slice-pie{fill:#0544d3}.ct-series-h .ct-bar,.ct-series-h .ct-line,.ct-series-h .ct-point,.ct-series-h .ct-slice-donut{stroke:#6b0392}.ct-series-h .ct-area,.ct-series-h .ct-slice-donut-solid,.ct-series-h .ct-slice-pie{fill:#6b0392}.ct-series-i .ct-bar,.ct-series-i .ct-line,.ct-series-i .ct-point,.ct-series-i .ct-slice-donut{stroke:#f05b4f}.ct-series-i .ct-area,.ct-series-i .ct-slice-donut-solid,.ct-series-i .ct-slice-pie{fill:#f05b4f}.ct-series-j .ct-bar,.ct-series-j .ct-line,.ct-series-j .ct-point,.ct-series-j .ct-slice-donut{stroke:#dda458}.ct-series-j .ct-area,.ct-series-j .ct-slice-donut-solid,.ct-series-j .ct-slice-pie{fill:#dda458}.ct-series-k .ct-bar,.ct-series-k .ct-line,.ct-series-k .ct-point,.ct-series-k .ct-slice-donut{stroke:#eacf7d}.ct-series-k .ct-area,.ct-series-k .ct-slice-donut-solid,.ct-series-k .ct-slice-pie{fill:#eacf7d}.ct-series-l .ct-bar,.ct-series-l .ct-line,.ct-series-l .ct-point,.ct-series-l .ct-slice-donut{stroke:#86797d}.ct-series-l .ct-area,.ct-series-l .ct-slice-donut-solid,.ct-series-l .ct-slice-pie{fill:#86797d}.ct-series-m .ct-bar,.ct-series-m .ct-line,.ct-series-m .ct-point,.ct-series-m .ct-slice-donut{stroke:#b2c326}.ct-series-m .ct-area,.ct-series-m .ct-slice-donut-solid,.ct-series-m .ct-slice-pie{fill:#b2c326}.ct-series-n .ct-bar,.ct-series-n .ct-line,.ct-series-n .ct-point,.ct-series-n .ct-slice-donut{stroke:#6188e2}.ct-series-n .ct-area,.ct-series-n .ct-slice-donut-solid,.ct-series-n .ct-slice-pie{fill:#6188e2}.ct-series-o .ct-bar,.ct-series-o .ct-line,.ct-series-o .ct-point,.ct-series-o .ct-slice-donut{stroke:#a748ca}.ct-series-o .ct-area,.ct-series-o .ct-slice-donut-solid,.ct-series-o .ct-slice-pie{fill:#a748ca}.ct-square{display:block;position:relative;width:100%}.ct-square:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:100%}.ct-square:after{display:table}.ct-square>svg{display:block;position:absolute;top:0;left:0}.ct-minor-second{display:block;position:relative;width:100%}.ct-minor-second:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:93.75%}.ct-minor-second:after{display:table}.ct-minor-second>svg{display:block;position:absolute;top:0;left:0}.ct-major-second{display:block;position:relative;width:100%}.ct-major-second:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:88.8888888889%}.ct-major-second:after{display:table}.ct-major-second>svg{display:block;position:absolute;top:0;left:0}.ct-minor-third{display:block;position:relative;width:100%}.ct-minor-third:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:83.3333333333%}.ct-minor-third:after{display:table}.ct-minor-third>svg{display:block;position:absolute;top:0;left:0}.ct-major-third{display:block;position:relative;width:100%}.ct-major-third:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:80%}.ct-major-third:after{display:table}.ct-major-third>svg{display:block;position:absolute;top:0;left:0}.ct-perfect-fourth{display:block;position:relative;width:100%}.ct-perfect-fourth:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:75%}.ct-perfect-fourth:after{display:table}.ct-perfect-fourth>svg{display:block;position:absolute;top:0;left:0}.ct-perfect-fifth{display:block;position:relative;width:100%}.ct-perfect-fifth:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:66.6666666667%}.ct-perfect-fifth:after{display:table}.ct-perfect-fifth>svg{display:block;position:absolute;top:0;left:0}.ct-minor-sixth{display:block;position:relative;width:100%}.ct-minor-sixth:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:62.5%}.ct-minor-sixth:after{display:table}.ct-minor-sixth>svg{display:block;position:absolute;top:0;left:0}.ct-golden-section{display:block;position:relative;width:100%}.ct-golden-section:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:61.804697157%}.ct-golden-section:after{content:"";display:table;clear:both}.ct-golden-section>svg{display:block;position:absolute;top:0;left:0}.ct-major-sixth{display:block;position:relative;width:100%}.ct-major-sixth:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:60%}.ct-major-sixth:after{display:table}.ct-major-sixth>svg{display:block;position:absolute;top:0;left:0}.ct-minor-seventh{display:block;position:relative;width:100%}.ct-minor-seventh:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:56.25%}.ct-minor-seventh:after{display:table}.ct-minor-seventh>svg{display:block;position:absolute;top:0;left:0}.ct-major-seventh{display:block;position:relative;width:100%}.ct-major-seventh:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:53.3333333333%}.ct-major-seventh:after{display:table}.ct-major-seventh>svg{display:block;position:absolute;top:0;left:0}.ct-octave{display:block;position:relative;width:100%}.ct-octave:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:50%}.ct-octave:after{display:table}.ct-octave>svg{display:block;position:absolute;top:0;left:0}.ct-major-tenth{display:block;position:relative;width:100%}.ct-major-tenth:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:40%}.ct-major-tenth:after{display:table}.ct-major-tenth>svg{display:block;position:absolute;top:0;left:0}.ct-major-eleventh{display:block;position:relative;width:100%}.ct-major-eleventh:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:37.5%}.ct-major-eleventh:after{display:table}.ct-major-eleventh>svg{display:block;position:absolute;top:0;left:0}.ct-major-twelfth{display:block;position:relative;width:100%}.ct-major-twelfth:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:33.3333333333%}.ct-major-twelfth:after{display:table}.ct-major-twelfth>svg{display:block;position:absolute;top:0;left:0}.ct-double-octave{display:block;position:relative;width:100%}.ct-double-octave:before{display:block;float:left;content:"";width:0;height:0;padding-bottom:25%}.ct-double-octave:after{display:table}.ct-double-octave>svg{display:block;position:absolute;top:0;left:0}</style>
+          <style>
+.ct-label {
+    fill: black;
+    color: black;
+    font-weight: bold;
+}
+.ct-axis-title {
+    fill: black;
+    color: black;
+    font-weight: bold;
+}
+.ct-legend {
+    position: relative;
+    z-index: 10;
+    list-style: none;
+    text-align: center;
+}
+.ct-legend li {
+    position: relative;
+    padding-left: 23px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    display: inline-block;
+}
+.ct-legend li:before {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: 0;
+    content: '';
+    border: 3px solid transparent;
+    border-radius: 2px;
+}
+.ct-legend li.inactive:before {
+    background: transparent;
+}
+.ct-legend.ct-legend-inside {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.ct-legend.ct-legend-inside li{
+           display: block;
+           margin: 0;
+}
+.ct-legend .ct-series-0:before{background-color: #5b4ff0;border-color: #5b4ff0;}.ct-legend .ct-series-1:before{background-color: #f05b4f;border-color: #f05b4f;}.ct-legend .ct-series-2:before{background-color: #f4c63d;border-color: #f4c63d}.ct-legend .ct-series-3:before{background-color: #d17905;border-color: #d17905;}.ct-legend .ct-series-4:before{background-color: #453d3f;border-color: #453d3f}.ct-legend .ct-series-5:before{background-color: #59922b;border-color: #59922b}.ct-legend .ct-series-6:before{background-color: #0544d3;border-color: #0544d3}.ct-legend .ct-series-7:before{background-color: #6b0392;border-color: #6b0392}.ct-legend .ct-series-8:before{background-color: #f05b4f;border-color: #f05b4f}.ct-legend .ct-series-9:before{background-color: #dda458;border-color: #dda458}.ct-legend .ct-series-10:before{background-color: #eacf7d;border-color: #eacf7d}.ct-legend .ct-series-11:before{background-color: #86797d;border-color: #86797d}.ct-legend .ct-series-12:before{background-color: #b2c326;border-color: #b2c326}.ct-legend .ct-series-13:before{background-color: #6188e2;border-color: #6188e2}.ct-legend .ct-series-14:before{background-color: #a748ca;border-color: #a748ca}
+.chartist-tooltip {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  min-width: 5em;
+  padding: .5em;
+  background: #F4C63D;
+  color: #453D3F;
+  font-family: Oxygen,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .2s linear; }
+  .chartist-tooltip:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-top-color: #F4C63D; }
+  .chartist-tooltip.tooltip-show {
+    opacity: 1; }
+
+.ct-area, .ct-line {
+  pointer-events: none; }
+</style>
+</head>
+<body><div hidden="" by-polymer-bundler=""></div>
+    <div id="layout">
+        <!-- Menu toggle -->
+        <a href="#menu" id="menuLink" class="menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+        <div id="menu">
+            <div class="pure-menu">
+                <a class="pure-menu-heading" href="#">Server Info</a>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="#sys" class="pure-menu-link">System</a></li><li class="pure-menu-item"><a href="#cpu" class="pure-menu-link">CPU</a></li><li class="pure-menu-item"><a href="#freq" class="pure-menu-link">Frequencies</a></li><li class="pure-menu-item"><a href="#mem" class="pure-menu-link">Memory</a></li><li class="pure-menu-item"><a href="#memperf" class="pure-menu-link">Memory Perf</a></li><li class="pure-menu-item"><a href="#numaperf" class="pure-menu-link">NUMA Perf</a></li><li class="pure-menu-item"><a href="#net" class="pure-menu-link">Network</a></li><li class="pure-menu-item"><a href="#disk" class="pure-menu-link">Disk</a></li><li class="pure-menu-item"><a href="#snap" class="pure-menu-link">Usage Snapshot</a></li><li class="pure-menu-item"><a href="#health" class="pure-menu-link">Health Check</a></li><li class="pure-menu-item"><a href="#syschk" class="pure-menu-link">System Check</a></li><li class="pure-menu-item"><a href="#syssen" class="pure-menu-link">System Sensors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div class="content">
+                <h2 class="content-subhead" id="sys">Host Name and Time</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>Host Info</th><th>134.134.101.193</th></tr></thead><tbody><tr><td>Host Time</td><td>Fri May  8 23:47:04 UTC 1998</td></tr><tr><td>Host Name</td><td>193.SKX.4S</td></tr></tbody></table></p><h2 class="content-subhead" id="sysd">System Details</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>System Info</th><th>134.134.101.193</th></tr></thead><tbody><tr><td>Manufacturer</td><td>Intel Corporation</td></tr><tr><td>Product Name</td><td>PURLEY</td></tr><tr><td>BIOS Version</td><td>PLYXCRB1.86B.0564.D09.1812121422</td></tr><tr><td>OS</td><td>Red Hat Enterprise Linux Server 7.5 (Maipo)</td></tr><tr><td>Kernel</td><td>3.10.0-957.el7.x86_64</td></tr><tr><td>Microcode</td><td>0x3000010</td></tr></tbody></table></p><h2 class="content-subhead" id="vuln">Kernel Vulnerability Status</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>Vulnerabilities</th><th>134.134.101.193</th></tr></thead><tbody><tr><td>variant 1: Bounds Check Bypass</td><td> OK (Mitigation: Load fences, __user pointer sanitization)</td></tr><tr><td>variant 2:Branch Target Injection</td><td> OK (IBRS + IBPB are mitigating the vulnerability)</td></tr><tr><td>variant 3:Rogue Data Cache Load</td><td> OK (your CPU vendor reported your CPU model as not vulnerable)</td></tr><tr><td>variant 3a:Rogue System Register Read</td><td> OK (your CPU microcode mitigates the vulnerability)</td></tr><tr><td>variant 4:Speculative Store Bypass</td><td> OK (Mitigation: Speculative Store Bypass disabled via prctl and seccomp)</td></tr><tr><td>foreshadow:L1 Terminal Fault-SGX</td><td> OK (your CPU vendor reported your CPU model as not vulnerable)</td></tr><tr><td>foreshadow:L1 Terminal Fault-OS/SMM</td><td> OK (Not affected)</td></tr><tr><td>foreshadow:L1 Terminal Fault-VMM</td><td> OK (this system is not running an hypervisor)</td></tr></tbody></table></p><h2 class="content-subhead" id="cpu">CPU Details</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>CPU Info</th><th>134.134.101.193</th></tr></thead><tbody><tr><td>Model Name</td><td>Genuine Intel(R) CPU 0000%@</td></tr><tr><td>Sockets</td><td>4</td></tr><tr><td>Hyper-Threading Enabled</td><td>yes</td></tr><tr><td>Total CPU(s)</td><td>224</td></tr><tr><td>NUMA Nodes</td><td>4</td></tr><tr><td>NUMA cpulist</td><td>0-27,112-139 :: 28-55,140-167 :: 56-83,168-195 :: 84-111,196-223</td></tr><tr><td>L1d Cache</td><td>32K</td></tr><tr><td>L1i Cache</td><td>32K</td></tr><tr><td>L2 Cache</td><td>1024K</td></tr><tr><td>L3 Cache</td><td>39424K</td></tr><tr><td>Prefetchers Enabled</td><td>DCU HW, DCU IP, L2 HW, L2 Adj.</td></tr><tr><td>Turbo Enabled</td><td>true</td></tr><tr><td>Power & Perf Policy</td><td>Performance</td></tr><tr><td>CPU Freq Driver</td><td>intel_pstate</td></tr><tr><td>CPU Freq Governor</td><td>performance</td></tr><tr><td>Current CPU Freq MHz</td><td>3559</td></tr><tr><td>AVX2 Available</td><td>true</td></tr><tr><td>AVX512 Available</td><td>true</td></tr><tr><td>AVX512 Test</td><td>Passed</td></tr></tbody></table></p><h2 class="content-subhead" id="freq">Per Core Frequencies</h2><p><table class="pure-table pure-table-striped"><thead><tr><th># Cores / Frequency</th><th>2</th><th>4</th><th>8</th><th>12</th><th>16</th><th>20</th><th>24</th><th>28</th></tr></thead><tbody><tr><td>134.134.101.193</td><td>3.8</td><td>3.6</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.2</td><td>3.1</td></tr></tbody></table><br></p><h2 class="content-subhead" id="freq">Calculated Per Core Turbo Frequencies</h2><p><table class="pure-table pure-table-striped"><thead><tr><th># Cores / Frequency</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th></tr></thead><tbody><tr><td>134.134.101.193</td><td>3503</td><td>3601</td><td>3596</td><td>3500</td><td>3502</td><td>3502</td><td>3502</td><td>3502</td><td>3502</td><td>3502</td><td>3502</td><td>3502</td><td>3501</td><td>3501</td><td>3501</td><td>3501</td><td>3497</td><td>3499</td><td>3468</td><td>3215</td><td>3200</td><td>3199</td><td>3187</td><td>3098</td><td>3100</td><td>3100</td><td>3099</td><td>3094</td></tr></tbody></table><br></p><h2 class="content-subhead" id="mem">Memory Details</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>Memory Info</th><th>134.134.101.193</th></tr></thead><tbody><tr><td>MemTotal</td><td>1583677656 kB</td></tr><tr><td>MemFree</td><td>1563992360 kB</td></tr><tr><td>HugePages_Total</td><td>0</td></tr><tr><td>Hugepagesize</td><td>2048 kB</td></tr></tbody></table><h3>Memory Topology for hosts: 134.134.101.193.</h3><table class="pure-table pure-table-bordered"><thead><tr><th>Socket</th><th>DIMM Topology</th></tr></thead><tbody><tr><td>0</td><td><table class="pure-table pure-table-bordered"><thead><tr><th>Channel</th><th>Slots</th></tr></thead><tbody><tr><td>0</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>1</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>2</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>3</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>4</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>5</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td>1</td><td><table class="pure-table pure-table-bordered"><thead><tr><th>Channel</th><th>Slots</th></tr></thead><tbody><tr><td>0</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>1</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>2</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>3</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>4</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>5</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td>2</td><td><table class="pure-table pure-table-bordered"><thead><tr><th>Channel</th><th>Slots</th></tr></thead><tbody><tr><td>0</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>1</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>2</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>3</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>4</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>5</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td>3</td><td><table class="pure-table pure-table-bordered"><thead><tr><th>Channel</th><th>Slots</th></tr></thead><tbody><tr><td>0</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>1</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>2</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>3</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>4</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr><tr><td>5</td><td><table class="pure-table pure-table-bordered"><thead></thead><tbody><tr><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td><td style="background-color:lightgreen">32 GB @2666 MHz DDR4 <br>Synchronous<br>Micron 36ASF4G72PZ-2G6H1</br></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></p><h2 class="content-subhead" id="memperf">Memory Performance</h2><p><h4 id="memguide">Guidelines for optimizing Memory Performance:</h4>
+<ol>
+<li>Use identical DIMM types throughout the platform:</li>
+<ul>
+<li>Same size, speed, and number of ranks</li>
+</ul>
+<li>Maximize the same number of channels populated in each memory controller</li>
+<li>Use a "balanced" platform configuration:</li>
+<ul>
+<li>All available memory channels populated equally</li>
+<li>Identical DIMMs in all locations (size/speed/rank)</li>
+</ul>
+<li>Use a "near-balanced" platform configuration:</li>
+<ul>
+<li>All available memory channels and sockets populated equally</li>
+<li>Identical DIMMs in each "row", but different sized DIMMs in row #1 vs. row #2</li>
+</ul>
+</ol>
+<h4 id="memperfchart">Memory Bandwidth -vs- Latency Performance Chart :</h4><div class="memchart ct-golden-section"></div></p><h2 class="content-subhead" id="numaperf">NUMA Memory Bandwidth Performance (MB/s)</h2><p><table class="pure-table pure-table-bordered"><thead><tr><th>134.134.101.193</th></tr></thead><tbody><tr><td><pre>		Numa node
+Numa node	     0	     1	     2	     3	
+       0	114777.0	17195.5	17203.8	17194.0	
+       1	17188.7	114614.5	17196.1	17221.5	
+       2	17186.8	17211.9	114750.6	17213.0	
+       3	17178.4	17199.8	17213.7	114611.6	
+</pre></td></tr></tbody></table></p><h2 class="content-subhead" id="net">Network Details</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>Network Info</th><th>134.134.101.193</th></tr></thead><tbody><tr><td>Name</td><td>enp45s0f0, enp45s0f1, enp45s0f2, enp45s0f3</td></tr><tr><td>Model</td><td>Ethernet Connection X722 for 10GbE QSFP+, Ethernet Connection X722 for 10GbE QSFP+, Ethernet Connection X722 for 10GbE QSFP+, Ethernet Connection X722 for 10GbE QSFP+</td></tr><tr><td>Speed</td><td>Unknown!, Unknown!, Unknown!, Unknown!</td></tr><tr><td>Link</td><td>no, no, no, no</td></tr><tr><td>Bus</td><td>0000:2d:00.0, 0000:2d:00.1, 0000:2d:00.2, 0000:2d:00.3</td></tr><tr><td>Driver</td><td>i40e, i40e, i40e, i40e</td></tr><tr><td>Firmware</td><td>4.00 0x80001558 1.1999.0, 4.00 0x80001558 1.1999.0, 4.00 0x80001558 1.1999.0, 4.00 0x80001558 1.1999.0</td></tr></tbody></table></p><h2 class="content-subhead" id="disk">Disk Details</h2><p><h3>Disk Devices and Usage on "134.134.101.193":</h3><table class="pure-table pure-table-bordered"><thead><tr><th>Disk Devices</th><th>Disk Usage</th></tr></thead><tbody><tr><td><pre>NAME          MODEL             SIZE MOUNTPOINT FSTYPE      TRAN   RQ-SIZE MIN-IO
+sda           INTEL SSDSC2BA01  1.1T                        sata       128   4096
+├─sda1                          200M /boot/efi  vfat                   128   4096
+├─sda2                            1G /boot      xfs                    128   4096
+└─sda3                          1.1T            LVM2_member            128   4096
+  ├─rhel-root                    50G /          xfs                    128   4096
+  ├─rhel-swap                     4G [SWAP]     swap                   128   4096
+  └─rhel-home                     1T /home      xfs                    128   4096
+sr0           DV-W28S-B        1024M                        sata       128    512
+
+</pre></td><td><pre>Filesystem             Size  Used Avail Use% Mounted on
+/dev/mapper/rhel-root   50G  5.1G   45G  11% /
+devtmpfs               756G     0  756G   0% /dev
+tmpfs                  756G     0  756G   0% /dev/shm
+tmpfs                  756G  741M  755G   1% /run
+tmpfs                  756G     0  756G   0% /sys/fs/cgroup
+/dev/sda2             1014M  275M  740M  28% /boot
+/dev/sda1              200M  9.8M  191M   5% /boot/efi
+/dev/mapper/rhel-home  1.1T   42G 1022G   4% /home
+tmpfs                  152G     0  152G   0% /run/user/0
+
+</pre></td></tr></tbody></table></p><h2 class="content-subhead" id="snap">System Usage Snapshot</h2><p><table class="pure-table pure-table-bordered"><thead><tr><th>System Usage on "134.134.101.193":</th></tr></thead><tbody><tr><td><pre>
+USER        PID %CPU %MEM   RSS COMMAND
+root     449237  0.0  0.0   968 grep -v ]$
+root     449236  0.0  0.0  3756 ps -eo user,pid,%cpu,%mem,rss,command --sort=%cpu,-pid
+root     444973  0.0  0.0  1912 /bin/bash /tmp/svr_info.sh.tmp/bin/svr_info_helper.sh -c none -n 134.134.101.193 -t 30 -f /tmp/svr_info.sh.tmp/path_to_fio_disk
+root     444844  0.0  0.0   608 sleep 60
+root     444789  0.0  0.0   876 /sbin/agetty --noclear tty1 linux
+postfix  444057  0.0  0.0  4072 pickup -l -t unix -u
+root       4796  0.0  0.0   372 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/libexec/libvirt_leaseshelper
+nobody     4793  0.0  0.0  1088 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/libexec/libvirt_leaseshelper
+postfix    4095  0.0  0.0  4324 qmgr -l -t unix -u
+root       4070  0.0  0.0  2216 /usr/libexec/postfix/master -w
+root       3571  0.0  0.0   572 rhnsd
+root       3541  0.0  0.0  1588 /usr/sbin/crond -n
+root       3539  0.0  0.0   948 /usr/sbin/atd -f
+root       3525  0.0  0.0   672 /usr/bin/rhsmcertd
+root       3524  0.0  0.0 17216 /usr/sbin/libvirtd
+root       3523  0.0  0.0 29132 /usr/sbin/rsyslogd -n
+root       3519  0.0  0.0  4424 /usr/sbin/cupsd -f
+root       3515  0.0  0.0 17364 /usr/bin/python -Es /usr/sbin/tuned -l -P
+</pre></td></tr></tbody></table></p><h2 class="content-subhead" id="health">Health Check using Micro-Benchmarks</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>Hosts / MicroBenchmarks</th><th>stressng_cpu</th><th>mem_peak_bw<a href="#memguide"><sup>[*]</sup></a></th><th>mem_lat</th><th>turbo_peak</th><th>turbo</th><th>turbo_tdp</th></tr></thead><tbody><tr><td>134.134.101.193</td><td>44359 ops/s</td><td>455400 MB/s</td><td>72 ns</td><td>3716 MHz</td><td>3050 MHz</td><td>853.16 Watts</td></tr></tbody></table></p><h2 class="content-subhead" id="syschk">System and Chassis Status</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>System/Chassis Status</th><th>134.134.101.193</th></tr></thead><tbody><tr><td>Last Power Event</td><td>overload </td></tr><tr><td>Power Overload</td><td>false</td></tr><tr><td>Main Power Fault</td><td>false</td></tr><tr><td>Power Restore Policy</td><td>always-off</td></tr><tr><td>Drive Fault</td><td>false</td></tr><tr><td>Cooling/Fan Fault</td><td>false</td></tr><tr><td>System Time</td><td>02/10/1970 20:43:37</td></tr></tbody></table></p><h2 class="content-subhead" id="sel">System Event Log (SEL)</h2><p><table class="pure-table pure-table-bordered"><thead><tr><th>134.134.101.193</th></tr></thead><tbody><tr><td><pre>
+  Pre-Init  |0003530122| Slot / Connector #0x80 | Device Absent | Asserted
+  Pre-Init  |0003530063| Slot / Connector #0x80 | Device Present | Asserted
+  Pre-Init  |0003530062| Slot / Connector #0x80 | Device Absent | Asserted
+  Pre-Init  |0003530062| Slot / Connector #0x80 | Device Present | Asserted
+  Pre-Init  |0003530056| Slot / Connector #0x80 | Device Absent | Asserted
+  Pre-Init  |0003530041| Slot / Connector #0x80 | Device Present | Asserted
+  Pre-Init  |0003530041| Slot / Connector #0x80 | Device Absent | Asserted
+  Pre-Init  |0003530041| Slot / Connector #0x80 | Device Present | Asserted
+  Pre-Init  |0000000213| Slot / Connector #0x80 | Device Present | Asserted
+  Pre-Init  |0000000213| Slot / Connector #0x80 | Device Absent | Asserted
+  Pre-Init  |0000000156| Slot / Connector #0x80 | Device Present | Asserted
+  Pre-Init  |0000000156| Slot / Connector #0x80 | Device Absent | Asserted
+  Pre-Init  |0000000133| System Event BIOS Evt Sensor | Timestamp Clock Sync | Asserted
+  Pre-Init  |0000000030| Fan AUX Fan | Lower Critical going low  | Asserted | Reading 0 < Threshold 1680 RPM
+  Pre-Init  |0000000030| Fan AUX Fan | Lower Non-critical going low  | Asserted | Reading 0 < Threshold 1980 RPM
+  Pre-Init  |0000000030| Fan LBG Fan | Lower Critical going low  | Asserted | Reading 0 < Threshold 1680 RPM
+  Pre-Init  |0000000030| Fan LBG Fan | Lower Non-critical going low  | Asserted | Reading 0 < Threshold 1980 RPM
+  Pre-Init  |0000000030| Fan CPU Fan 4 | Lower Critical going low  | Asserted | Reading 0 < Threshold 1680 RPM
+  Pre-Init  |0000000030| Fan CPU Fan 4 | Lower Non-critical going low  | Asserted | Reading 0 < Threshold 1980 RPM
+  Pre-Init  |0000000030| Fan CPU Fan 3 | Lower Critical going low  | Asserted | Reading 0 < Threshold 1674 RPM
+</pre></td></tr></tbody></table></p><h2 class="content-subhead" id="syssen">System Sensors</h2><p><table class="pure-table pure-table-striped"><thead><tr><th>Sensors</th><th>134.134.101.193</th></tr></thead><tbody><tr><td>System Airflow</td><td>0 CFM - ok
+</td></tr><tr><td>BB DIMM Exit Tmp</td><td>23 degrees C - ok
+</td></tr><tr><td>BB P1 VR Temp</td><td>33 degrees C - ok
+</td></tr><tr><td>Front Panel Temp</td><td>no reading - ns
+</td></tr><tr><td>SSB Temp</td><td>39 degrees C - ok
+</td></tr><tr><td>BB P2 VR Temp</td><td>33 degrees C - ok
+</td></tr><tr><td>BB BMC Temp</td><td>32 degrees C - ok
+</td></tr><tr><td>BB Inlet Temp</td><td>20 degrees C - ok
+</td></tr><tr><td>Fan Inlet Temp</td><td>no reading - ns
+</td></tr><tr><td>Exit Air Temp</td><td>no reading - ns
+</td></tr><tr><td>LAN NIC Temp</td><td>no reading - ns
+</td></tr><tr><td>System Fan 1A</td><td>5890 RPM - ok
+</td></tr><tr><td>System Fan 1B</td><td>5940 RPM - ok
+</td></tr><tr><td>System Fan 2A</td><td>5890 RPM - ok
+</td></tr><tr><td>System Fan 2B</td><td>5940 RPM - ok
+</td></tr><tr><td>System Fan 3A</td><td>5952 RPM - ok
+</td></tr><tr><td>System Fan 3B</td><td>6000 RPM - ok
+</td></tr><tr><td>System Fan 4A</td><td>5890 RPM - ok
+</td></tr><tr><td>System Fan 4B</td><td>5880 RPM - ok
+</td></tr><tr><td>CPU Fan 1</td><td>0 RPM - cr
+</td></tr><tr><td>CPU Fan 2</td><td>0 RPM - cr
+</td></tr><tr><td>CPU Fan 3</td><td>0 RPM - cr
+</td></tr><tr><td>CPU Fan 4</td><td>0 RPM - cr
+</td></tr><tr><td>LBG Fan</td><td>0 RPM - cr
+</td></tr><tr><td>AUX Fan</td><td>0 RPM - cr
+</td></tr><tr><td>PS1 Input Power</td><td>12 Watts - ok
+</td></tr><tr><td>PS2 Input Power</td><td>508 Watts - ok
+</td></tr><tr><td>PS3 Input Power</td><td>no reading - ns
+</td></tr><tr><td>PS4 Input Power</td><td>no reading - ns
+</td></tr><tr><td>PS1 Curr Out %</td><td>0 percent - ok
+</td></tr><tr><td>PS2 Curr Out %</td><td>35 percent - ok
+</td></tr><tr><td>PS3 Curr Out %</td><td>no reading - ns
+</td></tr><tr><td>PS4 Curr Out %</td><td>no reading - ns
+</td></tr><tr><td>PS1 Temperature</td><td>25 degrees C - ok
+</td></tr><tr><td>PS2 Temperature</td><td>22 degrees C - ok
+</td></tr><tr><td>PS3 Temperature</td><td>no reading - ns
+</td></tr><tr><td>PS4 Temperature</td><td>no reading - ns
+</td></tr><tr><td>P1 Therm Margin</td><td>-62 degrees C - ok
+</td></tr><tr><td>P2 Therm Margin</td><td>-62 degrees C - ok
+</td></tr><tr><td>P3 Therm Margin</td><td>-69 degrees C - ok
+</td></tr><tr><td>P4 Therm Margin</td><td>-67 degrees C - ok
+</td></tr><tr><td>P1 Therm Ctrl %</td><td>0 percent - ok
+</td></tr><tr><td>P2 Therm Ctrl %</td><td>0 percent - ok
+</td></tr><tr><td>P3 Therm Ctrl %</td><td>0 percent - ok
+</td></tr><tr><td>P4 Therm Ctrl %</td><td>0 percent - ok
+</td></tr><tr><td>P1 DTS Therm Mgn</td><td>-13 degrees C - ok
+</td></tr><tr><td>P2 DTS Therm Mgn</td><td>-13 degrees C - ok
+</td></tr><tr><td>P3 DTS Therm Mgn</td><td>-14 degrees C - ok
+</td></tr><tr><td>P4 DTS Therm Mgn</td><td>-14 degrees C - ok
+</td></tr><tr><td>PS1 Fan</td><td>no reading - ns
+</td></tr><tr><td>PS2 Fan</td><td>no reading - ns
+</td></tr><tr><td>PS3 Fan</td><td>no reading - ns
+</td></tr><tr><td>PS4 Fan</td><td>no reading - ns
+</td></tr><tr><td>DIMM Thrm Mrgn 1</td><td>no reading - ns
+</td></tr><tr><td>DIMM Thrm Mrgn 2</td><td>no reading - ns
+</td></tr><tr><td>DIMM Thrm Mrgn 3</td><td>no reading - ns
+</td></tr><tr><td>DIMM Thrm Mrgn 4</td><td>no reading - ns
+</td></tr><tr><td>Agg Therm Mgn 1</td><td>no reading - ns
+</td></tr><tr><td>BB +12.0V</td><td>2.31 Volts - cr
+</td></tr><tr><td>BB +3.0V Vbat</td><td>-0.01 Volts - cr
+</td></tr></tbody></table></p>
+            </div>
+        </div>
+    </div>
+    <script>(function (window, document) {
+
+    var layout   = document.getElementById('layout'),
+        menu     = document.getElementById('menu'),
+        menuLink = document.getElementById('menuLink'),
+        content  = document.getElementById('main');
+
+    function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+        for(; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        if (length === classes.length) {
+            classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+    }
+
+    function toggleAll(e) {
+        var active = 'active';
+
+        e.preventDefault();
+        toggleClass(layout, active);
+        toggleClass(menu, active);
+        toggleClass(menuLink, active);
+    }
+
+    menuLink.onclick = function (e) {
+        toggleAll(e);
+    };
+
+    content.onclick = function(e) {
+        if (menu.className.indexOf('active') !== -1) {
+            toggleAll(e);
+        }
+    };
+
+}(this, this.document));
+</script>
+    <script>/* Chartist.js 0.11.0
+ * Copyright © 2017 Gion Kunz
+ * Free to use under either the WTFPL license or the MIT license.
+ * https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-WTFPL
+ * https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-MIT
+ */
+
+!function(a,b){"function"==typeof define&&define.amd?define("Chartist",[],function(){return a.Chartist=b()}):"object"==typeof module&&module.exports?module.exports=b():a.Chartist=b()}(this,function(){var a={version:"0.11.0"};return function(a,b,c){"use strict";c.namespaces={svg:"http://www.w3.org/2000/svg",xmlns:"http://www.w3.org/2000/xmlns/",xhtml:"http://www.w3.org/1999/xhtml",xlink:"http://www.w3.org/1999/xlink",ct:"http://gionkunz.github.com/chartist-js/ct"},c.noop=function(a){return a},c.alphaNumerate=function(a){return String.fromCharCode(97+a%26)},c.extend=function(a){var b,d,e;for(a=a||{},b=1;b<arguments.length;b++){d=arguments[b];for(var f in d)e=d[f],"object"!=typeof e||null===e||e instanceof Array?a[f]=e:a[f]=c.extend(a[f],e)}return a},c.replaceAll=function(a,b,c){return a.replace(new RegExp(b,"g"),c)},c.ensureUnit=function(a,b){return"number"==typeof a&&(a+=b),a},c.quantity=function(a){if("string"==typeof a){var b=/^(\d+)\s*(.*)$/g.exec(a);return{value:+b[1],unit:b[2]||void 0}}return{value:a}},c.querySelector=function(a){return a instanceof Node?a:b.querySelector(a)},c.times=function(a){return Array.apply(null,new Array(a))},c.sum=function(a,b){return a+(b?b:0)},c.mapMultiply=function(a){return function(b){return b*a}},c.mapAdd=function(a){return function(b){return b+a}},c.serialMap=function(a,b){var d=[],e=Math.max.apply(null,a.map(function(a){return a.length}));return c.times(e).forEach(function(c,e){var f=a.map(function(a){return a[e]});d[e]=b.apply(null,f)}),d},c.roundWithPrecision=function(a,b){var d=Math.pow(10,b||c.precision);return Math.round(a*d)/d},c.precision=8,c.escapingMap={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"},c.serialize=function(a){return null===a||void 0===a?a:("number"==typeof a?a=""+a:"object"==typeof a&&(a=JSON.stringify({data:a})),Object.keys(c.escapingMap).reduce(function(a,b){return c.replaceAll(a,b,c.escapingMap[b])},a))},c.deserialize=function(a){if("string"!=typeof a)return a;a=Object.keys(c.escapingMap).reduce(function(a,b){return c.replaceAll(a,c.escapingMap[b],b)},a);try{a=JSON.parse(a),a=void 0!==a.data?a.data:a}catch(b){}return a},c.createSvg=function(a,b,d,e){var f;return b=b||"100%",d=d||"100%",Array.prototype.slice.call(a.querySelectorAll("svg")).filter(function(a){return a.getAttributeNS(c.namespaces.xmlns,"ct")}).forEach(function(b){a.removeChild(b)}),f=new c.Svg("svg").attr({width:b,height:d}).addClass(e),f._node.style.width=b,f._node.style.height=d,a.appendChild(f._node),f},c.normalizeData=function(a,b,d){var e,f={raw:a,normalized:{}};return f.normalized.series=c.getDataArray({series:a.series||[]},b,d),e=f.normalized.series.every(function(a){return a instanceof Array})?Math.max.apply(null,f.normalized.series.map(function(a){return a.length})):f.normalized.series.length,f.normalized.labels=(a.labels||[]).slice(),Array.prototype.push.apply(f.normalized.labels,c.times(Math.max(0,e-f.normalized.labels.length)).map(function(){return""})),b&&c.reverseData(f.normalized),f},c.safeHasProperty=function(a,b){return null!==a&&"object"==typeof a&&a.hasOwnProperty(b)},c.isDataHoleValue=function(a){return null===a||void 0===a||"number"==typeof a&&isNaN(a)},c.reverseData=function(a){a.labels.reverse(),a.series.reverse();for(var b=0;b<a.series.length;b++)"object"==typeof a.series[b]&&void 0!==a.series[b].data?a.series[b].data.reverse():a.series[b]instanceof Array&&a.series[b].reverse()},c.getDataArray=function(a,b,d){function e(a){if(c.safeHasProperty(a,"value"))return e(a.value);if(c.safeHasProperty(a,"data"))return e(a.data);if(a instanceof Array)return a.map(e);if(!c.isDataHoleValue(a)){if(d){var b={};return"string"==typeof d?b[d]=c.getNumberOrUndefined(a):b.y=c.getNumberOrUndefined(a),b.x=a.hasOwnProperty("x")?c.getNumberOrUndefined(a.x):b.x,b.y=a.hasOwnProperty("y")?c.getNumberOrUndefined(a.y):b.y,b}return c.getNumberOrUndefined(a)}}return a.series.map(e)},c.normalizePadding=function(a,b){return b=b||0,"number"==typeof a?{top:a,right:a,bottom:a,left:a}:{top:"number"==typeof a.top?a.top:b,right:"number"==typeof a.right?a.right:b,bottom:"number"==typeof a.bottom?a.bottom:b,left:"number"==typeof a.left?a.left:b}},c.getMetaData=function(a,b){var c=a.data?a.data[b]:a[b];return c?c.meta:void 0},c.orderOfMagnitude=function(a){return Math.floor(Math.log(Math.abs(a))/Math.LN10)},c.projectLength=function(a,b,c){return b/c.range*a},c.getAvailableHeight=function(a,b){return Math.max((c.quantity(b.height).value||a.height())-(b.chartPadding.top+b.chartPadding.bottom)-b.axisX.offset,0)},c.getHighLow=function(a,b,d){function e(a){if(void 0!==a)if(a instanceof Array)for(var b=0;b<a.length;b++)e(a[b]);else{var c=d?+a[d]:+a;g&&c>f.high&&(f.high=c),h&&c<f.low&&(f.low=c)}}b=c.extend({},b,d?b["axis"+d.toUpperCase()]:{});var f={high:void 0===b.high?-Number.MAX_VALUE:+b.high,low:void 0===b.low?Number.MAX_VALUE:+b.low},g=void 0===b.high,h=void 0===b.low;return(g||h)&&e(a),(b.referenceValue||0===b.referenceValue)&&(f.high=Math.max(b.referenceValue,f.high),f.low=Math.min(b.referenceValue,f.low)),f.high<=f.low&&(0===f.low?f.high=1:f.low<0?f.high=0:f.high>0?f.low=0:(f.high=1,f.low=0)),f},c.isNumeric=function(a){return null!==a&&isFinite(a)},c.isFalseyButZero=function(a){return!a&&0!==a},c.getNumberOrUndefined=function(a){return c.isNumeric(a)?+a:void 0},c.isMultiValue=function(a){return"object"==typeof a&&("x"in a||"y"in a)},c.getMultiValue=function(a,b){return c.isMultiValue(a)?c.getNumberOrUndefined(a[b||"y"]):c.getNumberOrUndefined(a)},c.rho=function(a){function b(a,c){return a%c===0?c:b(c,a%c)}function c(a){return a*a+1}if(1===a)return a;var d,e=2,f=2;if(a%2===0)return 2;do e=c(e)%a,f=c(c(f))%a,d=b(Math.abs(e-f),a);while(1===d);return d},c.getBounds=function(a,b,d,e){function f(a,b){return a===(a+=b)&&(a*=1+(b>0?o:-o)),a}var g,h,i,j=0,k={high:b.high,low:b.low};k.valueRange=k.high-k.low,k.oom=c.orderOfMagnitude(k.valueRange),k.step=Math.pow(10,k.oom),k.min=Math.floor(k.low/k.step)*k.step,k.max=Math.ceil(k.high/k.step)*k.step,k.range=k.max-k.min,k.numberOfSteps=Math.round(k.range/k.step);var l=c.projectLength(a,k.step,k),m=l<d,n=e?c.rho(k.range):0;if(e&&c.projectLength(a,1,k)>=d)k.step=1;else if(e&&n<k.step&&c.projectLength(a,n,k)>=d)k.step=n;else for(;;){if(m&&c.projectLength(a,k.step,k)<=d)k.step*=2;else{if(m||!(c.projectLength(a,k.step/2,k)>=d))break;if(k.step/=2,e&&k.step%1!==0){k.step*=2;break}}if(j++>1e3)throw new Error("Exceeded maximum number of iterations while optimizing scale step!")}var o=2.221e-16;for(k.step=Math.max(k.step,o),h=k.min,i=k.max;h+k.step<=k.low;)h=f(h,k.step);for(;i-k.step>=k.high;)i=f(i,-k.step);k.min=h,k.max=i,k.range=k.max-k.min;var p=[];for(g=k.min;g<=k.max;g=f(g,k.step)){var q=c.roundWithPrecision(g);q!==p[p.length-1]&&p.push(q)}return k.values=p,k},c.polarToCartesian=function(a,b,c,d){var e=(d-90)*Math.PI/180;return{x:a+c*Math.cos(e),y:b+c*Math.sin(e)}},c.createChartRect=function(a,b,d){var e=!(!b.axisX&&!b.axisY),f=e?b.axisY.offset:0,g=e?b.axisX.offset:0,h=a.width()||c.quantity(b.width).value||0,i=a.height()||c.quantity(b.height).value||0,j=c.normalizePadding(b.chartPadding,d);h=Math.max(h,f+j.left+j.right),i=Math.max(i,g+j.top+j.bottom);var k={padding:j,width:function(){return this.x2-this.x1},height:function(){return this.y1-this.y2}};return e?("start"===b.axisX.position?(k.y2=j.top+g,k.y1=Math.max(i-j.bottom,k.y2+1)):(k.y2=j.top,k.y1=Math.max(i-j.bottom-g,k.y2+1)),"start"===b.axisY.position?(k.x1=j.left+f,k.x2=Math.max(h-j.right,k.x1+1)):(k.x1=j.left,k.x2=Math.max(h-j.right-f,k.x1+1))):(k.x1=j.left,k.x2=Math.max(h-j.right,k.x1+1),k.y2=j.top,k.y1=Math.max(i-j.bottom,k.y2+1)),k},c.createGrid=function(a,b,d,e,f,g,h,i){var j={};j[d.units.pos+"1"]=a,j[d.units.pos+"2"]=a,j[d.counterUnits.pos+"1"]=e,j[d.counterUnits.pos+"2"]=e+f;var k=g.elem("line",j,h.join(" "));i.emit("draw",c.extend({type:"grid",axis:d,index:b,group:g,element:k},j))},c.createGridBackground=function(a,b,c,d){var e=a.elem("rect",{x:b.x1,y:b.y2,width:b.width(),height:b.height()},c,!0);d.emit("draw",{type:"gridBackground",group:a,element:e})},c.createLabel=function(a,d,e,f,g,h,i,j,k,l,m){var n,o={};if(o[g.units.pos]=a+i[g.units.pos],o[g.counterUnits.pos]=i[g.counterUnits.pos],o[g.units.len]=d,o[g.counterUnits.len]=Math.max(0,h-10),l){var p=b.createElement("span");p.className=k.join(" "),p.setAttribute("xmlns",c.namespaces.xhtml),p.innerText=f[e],p.style[g.units.len]=Math.round(o[g.units.len])+"px",p.style[g.counterUnits.len]=Math.round(o[g.counterUnits.len])+"px",n=j.foreignObject(p,c.extend({style:"overflow: visible;"},o))}else n=j.elem("text",o,k.join(" ")).text(f[e]);m.emit("draw",c.extend({type:"label",axis:g,index:e,group:j,element:n,text:f[e]},o))},c.getSeriesOption=function(a,b,c){if(a.name&&b.series&&b.series[a.name]){var d=b.series[a.name];return d.hasOwnProperty(c)?d[c]:b[c]}return b[c]},c.optionsProvider=function(b,d,e){function f(b){var f=h;if(h=c.extend({},j),d)for(i=0;i<d.length;i++){var g=a.matchMedia(d[i][0]);g.matches&&(h=c.extend(h,d[i][1]))}e&&b&&e.emit("optionsChanged",{previousOptions:f,currentOptions:h})}function g(){k.forEach(function(a){a.removeListener(f)})}var h,i,j=c.extend({},b),k=[];if(!a.matchMedia)throw"window.matchMedia not found! Make sure you're using a polyfill.";if(d)for(i=0;i<d.length;i++){var l=a.matchMedia(d[i][0]);l.addListener(f),k.push(l)}return f(),{removeMediaQueryListeners:g,getCurrentOptions:function(){return c.extend({},h)}}},c.splitIntoSegments=function(a,b,d){var e={increasingX:!1,fillHoles:!1};d=c.extend({},e,d);for(var f=[],g=!0,h=0;h<a.length;h+=2)void 0===c.getMultiValue(b[h/2].value)?d.fillHoles||(g=!0):(d.increasingX&&h>=2&&a[h]<=a[h-2]&&(g=!0),g&&(f.push({pathCoordinates:[],valueData:[]}),g=!1),f[f.length-1].pathCoordinates.push(a[h],a[h+1]),f[f.length-1].valueData.push(b[h/2]));return f}}(window,document,a),function(a,b,c){"use strict";c.Interpolation={},c.Interpolation.none=function(a){var b={fillHoles:!1};return a=c.extend({},b,a),function(b,d){for(var e=new c.Svg.Path,f=!0,g=0;g<b.length;g+=2){var h=b[g],i=b[g+1],j=d[g/2];void 0!==c.getMultiValue(j.value)?(f?e.move(h,i,!1,j):e.line(h,i,!1,j),f=!1):a.fillHoles||(f=!0)}return e}},c.Interpolation.simple=function(a){var b={divisor:2,fillHoles:!1};a=c.extend({},b,a);var d=1/Math.max(1,a.divisor);return function(b,e){for(var f,g,h,i=new c.Svg.Path,j=0;j<b.length;j+=2){var k=b[j],l=b[j+1],m=(k-f)*d,n=e[j/2];void 0!==n.value?(void 0===h?i.move(k,l,!1,n):i.curve(f+m,g,k-m,l,k,l,!1,n),f=k,g=l,h=n):a.fillHoles||(f=k=h=void 0)}return i}},c.Interpolation.cardinal=function(a){var b={tension:1,fillHoles:!1};a=c.extend({},b,a);var d=Math.min(1,Math.max(0,a.tension)),e=1-d;return function f(b,g){var h=c.splitIntoSegments(b,g,{fillHoles:a.fillHoles});if(h.length){if(h.length>1){var i=[];return h.forEach(function(a){i.push(f(a.pathCoordinates,a.valueData))}),c.Svg.Path.join(i)}if(b=h[0].pathCoordinates,g=h[0].valueData,b.length<=4)return c.Interpolation.none()(b,g);for(var j,k=(new c.Svg.Path).move(b[0],b[1],!1,g[0]),l=0,m=b.length;m-2*!j>l;l+=2){var n=[{x:+b[l-2],y:+b[l-1]},{x:+b[l],y:+b[l+1]},{x:+b[l+2],y:+b[l+3]},{x:+b[l+4],y:+b[l+5]}];j?l?m-4===l?n[3]={x:+b[0],y:+b[1]}:m-2===l&&(n[2]={x:+b[0],y:+b[1]},n[3]={x:+b[2],y:+b[3]}):n[0]={x:+b[m-2],y:+b[m-1]}:m-4===l?n[3]=n[2]:l||(n[0]={x:+b[l],y:+b[l+1]}),k.curve(d*(-n[0].x+6*n[1].x+n[2].x)/6+e*n[2].x,d*(-n[0].y+6*n[1].y+n[2].y)/6+e*n[2].y,d*(n[1].x+6*n[2].x-n[3].x)/6+e*n[2].x,d*(n[1].y+6*n[2].y-n[3].y)/6+e*n[2].y,n[2].x,n[2].y,!1,g[(l+2)/2])}return k}return c.Interpolation.none()([])}},c.Interpolation.monotoneCubic=function(a){var b={fillHoles:!1};return a=c.extend({},b,a),function d(b,e){var f=c.splitIntoSegments(b,e,{fillHoles:a.fillHoles,increasingX:!0});if(f.length){if(f.length>1){var g=[];return f.forEach(function(a){g.push(d(a.pathCoordinates,a.valueData))}),c.Svg.Path.join(g)}if(b=f[0].pathCoordinates,e=f[0].valueData,b.length<=4)return c.Interpolation.none()(b,e);var h,i,j=[],k=[],l=b.length/2,m=[],n=[],o=[],p=[];for(h=0;h<l;h++)j[h]=b[2*h],k[h]=b[2*h+1];for(h=0;h<l-1;h++)o[h]=k[h+1]-k[h],p[h]=j[h+1]-j[h],n[h]=o[h]/p[h];for(m[0]=n[0],m[l-1]=n[l-2],h=1;h<l-1;h++)0===n[h]||0===n[h-1]||n[h-1]>0!=n[h]>0?m[h]=0:(m[h]=3*(p[h-1]+p[h])/((2*p[h]+p[h-1])/n[h-1]+(p[h]+2*p[h-1])/n[h]),isFinite(m[h])||(m[h]=0));for(i=(new c.Svg.Path).move(j[0],k[0],!1,e[0]),h=0;h<l-1;h++)i.curve(j[h]+p[h]/3,k[h]+m[h]*p[h]/3,j[h+1]-p[h]/3,k[h+1]-m[h+1]*p[h]/3,j[h+1],k[h+1],!1,e[h+1]);return i}return c.Interpolation.none()([])}},c.Interpolation.step=function(a){var b={postpone:!0,fillHoles:!1};return a=c.extend({},b,a),function(b,d){for(var e,f,g,h=new c.Svg.Path,i=0;i<b.length;i+=2){var j=b[i],k=b[i+1],l=d[i/2];void 0!==l.value?(void 0===g?h.move(j,k,!1,l):(a.postpone?h.line(j,f,!1,g):h.line(e,k,!1,l),h.line(j,k,!1,l)),e=j,f=k,g=l):a.fillHoles||(e=f=g=void 0)}return h}}}(window,document,a),function(a,b,c){"use strict";c.EventEmitter=function(){function a(a,b){d[a]=d[a]||[],d[a].push(b)}function b(a,b){d[a]&&(b?(d[a].splice(d[a].indexOf(b),1),0===d[a].length&&delete d[a]):delete d[a])}function c(a,b){d[a]&&d[a].forEach(function(a){a(b)}),d["*"]&&d["*"].forEach(function(c){c(a,b)})}var d=[];return{addEventHandler:a,removeEventHandler:b,emit:c}}}(window,document,a),function(a,b,c){"use strict";function d(a){var b=[];if(a.length)for(var c=0;c<a.length;c++)b.push(a[c]);return b}function e(a,b){var d=b||this.prototype||c.Class,e=Object.create(d);c.Class.cloneDefinitions(e,a);var f=function(){var a,b=e.constructor||function(){};return a=this===c?Object.create(e):this,b.apply(a,Array.prototype.slice.call(arguments,0)),a};return f.prototype=e,f["super"]=d,f.extend=this.extend,f}function f(){var a=d(arguments),b=a[0];return a.splice(1,a.length-1).forEach(function(a){Object.getOwnPropertyNames(a).forEach(function(c){delete b[c],Object.defineProperty(b,c,Object.getOwnPropertyDescriptor(a,c))})}),b}c.Class={extend:e,cloneDefinitions:f}}(window,document,a),function(a,b,c){"use strict";function d(a,b,d){return a&&(this.data=a||{},this.data.labels=this.data.labels||[],this.data.series=this.data.series||[],this.eventEmitter.emit("data",{type:"update",data:this.data})),b&&(this.options=c.extend({},d?this.options:this.defaultOptions,b),this.initializeTimeoutId||(this.optionsProvider.removeMediaQueryListeners(),this.optionsProvider=c.optionsProvider(this.options,this.responsiveOptions,this.eventEmitter))),this.initializeTimeoutId||this.createChart(this.optionsProvider.getCurrentOptions()),this}function e(){return this.initializeTimeoutId?a.clearTimeout(this.initializeTimeoutId):(a.removeEventListener("resize",this.resizeListener),this.optionsProvider.removeMediaQueryListeners()),this}function f(a,b){return this.eventEmitter.addEventHandler(a,b),this}function g(a,b){return this.eventEmitter.removeEventHandler(a,b),this}function h(){a.addEventListener("resize",this.resizeListener),this.optionsProvider=c.optionsProvider(this.options,this.responsiveOptions,this.eventEmitter),this.eventEmitter.addEventHandler("optionsChanged",function(){this.update()}.bind(this)),this.options.plugins&&this.options.plugins.forEach(function(a){a instanceof Array?a[0](this,a[1]):a(this)}.bind(this)),this.eventEmitter.emit("data",{type:"initial",data:this.data}),this.createChart(this.optionsProvider.getCurrentOptions()),this.initializeTimeoutId=void 0}function i(a,b,d,e,f){this.container=c.querySelector(a),this.data=b||{},this.data.labels=this.data.labels||[],this.data.series=this.data.series||[],this.defaultOptions=d,this.options=e,this.responsiveOptions=f,this.eventEmitter=c.EventEmitter(),this.supportsForeignObject=c.Svg.isSupported("Extensibility"),this.supportsAnimations=c.Svg.isSupported("AnimationEventsAttribute"),this.resizeListener=function(){this.update()}.bind(this),this.container&&(this.container.__chartist__&&this.container.__chartist__.detach(),this.container.__chartist__=this),this.initializeTimeoutId=setTimeout(h.bind(this),0)}c.Base=c.Class.extend({constructor:i,optionsProvider:void 0,container:void 0,svg:void 0,eventEmitter:void 0,createChart:function(){throw new Error("Base chart type can't be instantiated!")},update:d,detach:e,on:f,off:g,version:c.version,supportsForeignObject:!1})}(window,document,a),function(a,b,c){"use strict";function d(a,d,e,f,g){a instanceof Element?this._node=a:(this._node=b.createElementNS(c.namespaces.svg,a),"svg"===a&&this.attr({"xmlns:ct":c.namespaces.ct})),d&&this.attr(d),e&&this.addClass(e),f&&(g&&f._node.firstChild?f._node.insertBefore(this._node,f._node.firstChild):f._node.appendChild(this._node))}function e(a,b){return"string"==typeof a?b?this._node.getAttributeNS(b,a):this._node.getAttribute(a):(Object.keys(a).forEach(function(b){if(void 0!==a[b])if(b.indexOf(":")!==-1){var d=b.split(":");this._node.setAttributeNS(c.namespaces[d[0]],b,a[b])}else this._node.setAttribute(b,a[b])}.bind(this)),this)}function f(a,b,d,e){return new c.Svg(a,b,d,this,e)}function g(){return this._node.parentNode instanceof SVGElement?new c.Svg(this._node.parentNode):null}function h(){for(var a=this._node;"svg"!==a.nodeName;)a=a.parentNode;return new c.Svg(a)}function i(a){var b=this._node.querySelector(a);return b?new c.Svg(b):null}function j(a){var b=this._node.querySelectorAll(a);return b.length?new c.Svg.List(b):null}function k(){return this._node}function l(a,d,e,f){if("string"==typeof a){var g=b.createElement("div");g.innerHTML=a,a=g.firstChild}a.setAttribute("xmlns",c.namespaces.xmlns);var h=this.elem("foreignObject",d,e,f);return h._node.appendChild(a),h}function m(a){return this._node.appendChild(b.createTextNode(a)),this}function n(){for(;this._node.firstChild;)this._node.removeChild(this._node.firstChild);return this}function o(){return this._node.parentNode.removeChild(this._node),this.parent()}function p(a){return this._node.parentNode.replaceChild(a._node,this._node),a}function q(a,b){return b&&this._node.firstChild?this._node.insertBefore(a._node,this._node.firstChild):this._node.appendChild(a._node),this}function r(){return this._node.getAttribute("class")?this._node.getAttribute("class").trim().split(/\s+/):[]}function s(a){return this._node.setAttribute("class",this.classes(this._node).concat(a.trim().split(/\s+/)).filter(function(a,b,c){return c.indexOf(a)===b}).join(" ")),this}function t(a){var b=a.trim().split(/\s+/);return this._node.setAttribute("class",this.classes(this._node).filter(function(a){return b.indexOf(a)===-1}).join(" ")),this}function u(){return this._node.setAttribute("class",""),this}function v(){return this._node.getBoundingClientRect().height}function w(){return this._node.getBoundingClientRect().width}function x(a,b,d){return void 0===b&&(b=!0),Object.keys(a).forEach(function(e){function f(a,b){var f,g,h,i={};a.easing&&(h=a.easing instanceof Array?a.easing:c.Svg.Easing[a.easing],delete a.easing),a.begin=c.ensureUnit(a.begin,"ms"),a.dur=c.ensureUnit(a.dur,"ms"),h&&(a.calcMode="spline",a.keySplines=h.join(" "),a.keyTimes="0;1"),b&&(a.fill="freeze",i[e]=a.from,this.attr(i),g=c.quantity(a.begin||0).value,a.begin="indefinite"),f=this.elem("animate",c.extend({attributeName:e},a)),b&&setTimeout(function(){try{f._node.beginElement()}catch(b){i[e]=a.to,this.attr(i),f.remove()}}.bind(this),g),d&&f._node.addEventListener("beginEvent",function(){d.emit("animationBegin",{element:this,animate:f._node,params:a})}.bind(this)),f._node.addEventListener("endEvent",function(){d&&d.emit("animationEnd",{element:this,animate:f._node,params:a}),b&&(i[e]=a.to,this.attr(i),f.remove())}.bind(this))}a[e]instanceof Array?a[e].forEach(function(a){f.bind(this)(a,!1)}.bind(this)):f.bind(this)(a[e],b)}.bind(this)),this}function y(a){var b=this;this.svgElements=[];for(var d=0;d<a.length;d++)this.svgElements.push(new c.Svg(a[d]));Object.keys(c.Svg.prototype).filter(function(a){return["constructor","parent","querySelector","querySelectorAll","replace","append","classes","height","width"].indexOf(a)===-1}).forEach(function(a){b[a]=function(){var d=Array.prototype.slice.call(arguments,0);return b.svgElements.forEach(function(b){c.Svg.prototype[a].apply(b,d)}),b}})}c.Svg=c.Class.extend({constructor:d,attr:e,elem:f,parent:g,root:h,querySelector:i,querySelectorAll:j,getNode:k,foreignObject:l,text:m,empty:n,remove:o,replace:p,append:q,classes:r,addClass:s,removeClass:t,removeAllClasses:u,height:v,width:w,animate:x}),c.Svg.isSupported=function(a){return b.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#"+a,"1.1")};var z={easeInSine:[.47,0,.745,.715],easeOutSine:[.39,.575,.565,1],easeInOutSine:[.445,.05,.55,.95],easeInQuad:[.55,.085,.68,.53],easeOutQuad:[.25,.46,.45,.94],easeInOutQuad:[.455,.03,.515,.955],easeInCubic:[.55,.055,.675,.19],easeOutCubic:[.215,.61,.355,1],easeInOutCubic:[.645,.045,.355,1],easeInQuart:[.895,.03,.685,.22],easeOutQuart:[.165,.84,.44,1],easeInOutQuart:[.77,0,.175,1],easeInQuint:[.755,.05,.855,.06],easeOutQuint:[.23,1,.32,1],easeInOutQuint:[.86,0,.07,1],easeInExpo:[.95,.05,.795,.035],easeOutExpo:[.19,1,.22,1],easeInOutExpo:[1,0,0,1],easeInCirc:[.6,.04,.98,.335],easeOutCirc:[.075,.82,.165,1],easeInOutCirc:[.785,.135,.15,.86],easeInBack:[.6,-.28,.735,.045],easeOutBack:[.175,.885,.32,1.275],easeInOutBack:[.68,-.55,.265,1.55]};c.Svg.Easing=z,c.Svg.List=c.Class.extend({constructor:y})}(window,document,a),function(a,b,c){"use strict";function d(a,b,d,e,f,g){var h=c.extend({command:f?a.toLowerCase():a.toUpperCase()},b,g?{data:g}:{});d.splice(e,0,h)}function e(a,b){a.forEach(function(c,d){u[c.command.toLowerCase()].forEach(function(e,f){b(c,e,d,f,a)})})}function f(a,b){this.pathElements=[],this.pos=0,this.close=a,this.options=c.extend({},v,b)}function g(a){return void 0!==a?(this.pos=Math.max(0,Math.min(this.pathElements.length,a)),this):this.pos}function h(a){return this.pathElements.splice(this.pos,a),this}function i(a,b,c,e){return d("M",{x:+a,y:+b},this.pathElements,this.pos++,c,e),this}function j(a,b,c,e){return d("L",{x:+a,y:+b},this.pathElements,this.pos++,c,e),this}function k(a,b,c,e,f,g,h,i){return d("C",{x1:+a,y1:+b,x2:+c,y2:+e,x:+f,y:+g},this.pathElements,this.pos++,h,i),this}function l(a,b,c,e,f,g,h,i,j){return d("A",{rx:+a,ry:+b,xAr:+c,lAf:+e,sf:+f,x:+g,y:+h},this.pathElements,this.pos++,i,j),this}function m(a){var b=a.replace(/([A-Za-z])([0-9])/g,"$1 $2").replace(/([0-9])([A-Za-z])/g,"$1 $2").split(/[\s,]+/).reduce(function(a,b){return b.match(/[A-Za-z]/)&&a.push([]),a[a.length-1].push(b),a},[]);"Z"===b[b.length-1][0].toUpperCase()&&b.pop();var d=b.map(function(a){var b=a.shift(),d=u[b.toLowerCase()];return c.extend({command:b},d.reduce(function(b,c,d){return b[c]=+a[d],b},{}))}),e=[this.pos,0];return Array.prototype.push.apply(e,d),Array.prototype.splice.apply(this.pathElements,e),this.pos+=d.length,this}function n(){var a=Math.pow(10,this.options.accuracy);return this.pathElements.reduce(function(b,c){var d=u[c.command.toLowerCase()].map(function(b){return this.options.accuracy?Math.round(c[b]*a)/a:c[b]}.bind(this));return b+c.command+d.join(",")}.bind(this),"")+(this.close?"Z":"")}function o(a,b){return e(this.pathElements,function(c,d){c[d]*="x"===d[0]?a:b}),this}function p(a,b){return e(this.pathElements,function(c,d){c[d]+="x"===d[0]?a:b}),this}function q(a){return e(this.pathElements,function(b,c,d,e,f){var g=a(b,c,d,e,f);(g||0===g)&&(b[c]=g)}),this}function r(a){var b=new c.Svg.Path(a||this.close);return b.pos=this.pos,b.pathElements=this.pathElements.slice().map(function(a){return c.extend({},a)}),b.options=c.extend({},this.options),b}function s(a){var b=[new c.Svg.Path];return this.pathElements.forEach(function(d){d.command===a.toUpperCase()&&0!==b[b.length-1].pathElements.length&&b.push(new c.Svg.Path),b[b.length-1].pathElements.push(d)}),b}function t(a,b,d){for(var e=new c.Svg.Path(b,d),f=0;f<a.length;f++)for(var g=a[f],h=0;h<g.pathElements.length;h++)e.pathElements.push(g.pathElements[h]);return e}var u={m:["x","y"],l:["x","y"],c:["x1","y1","x2","y2","x","y"],a:["rx","ry","xAr","lAf","sf","x","y"]},v={accuracy:3};c.Svg.Path=c.Class.extend({constructor:f,position:g,remove:h,move:i,line:j,curve:k,arc:l,scale:o,translate:p,transform:q,parse:m,stringify:n,clone:r,splitByCommand:s}),c.Svg.Path.elementDescriptions=u,c.Svg.Path.join=t}(window,document,a),function(a,b,c){"use strict";function d(a,b,c,d){this.units=a,this.counterUnits=a===f.x?f.y:f.x,this.chartRect=b,this.axisLength=b[a.rectEnd]-b[a.rectStart],this.gridOffset=b[a.rectOffset],this.ticks=c,this.options=d}function e(a,b,d,e,f){var g=e["axis"+this.units.pos.toUpperCase()],h=this.ticks.map(this.projectValue.bind(this)),i=this.ticks.map(g.labelInterpolationFnc);h.forEach(function(j,k){var l,m={x:0,y:0};l=h[k+1]?h[k+1]-j:Math.max(this.axisLength-j,30),c.isFalseyButZero(i[k])&&""!==i[k]||("x"===this.units.pos?(j=this.chartRect.x1+j,m.x=e.axisX.labelOffset.x,"start"===e.axisX.position?m.y=this.chartRect.padding.top+e.axisX.labelOffset.y+(d?5:20):m.y=this.chartRect.y1+e.axisX.labelOffset.y+(d?5:20)):(j=this.chartRect.y1-j,m.y=e.axisY.labelOffset.y-(d?l:0),"start"===e.axisY.position?m.x=d?this.chartRect.padding.left+e.axisY.labelOffset.x:this.chartRect.x1-10:m.x=this.chartRect.x2+e.axisY.labelOffset.x+10),g.showGrid&&c.createGrid(j,k,this,this.gridOffset,this.chartRect[this.counterUnits.len](),a,[e.classNames.grid,e.classNames[this.units.dir]],f),g.showLabel&&c.createLabel(j,l,k,i,this,g.offset,m,b,[e.classNames.label,e.classNames[this.units.dir],"start"===g.position?e.classNames[g.position]:e.classNames.end],d,f))}.bind(this))}var f={x:{pos:"x",len:"width",dir:"horizontal",rectStart:"x1",rectEnd:"x2",rectOffset:"y2"},y:{pos:"y",len:"height",dir:"vertical",rectStart:"y2",rectEnd:"y1",rectOffset:"x1"}};c.Axis=c.Class.extend({constructor:d,createGridAndLabels:e,projectValue:function(a,b,c){throw new Error("Base axis can't be instantiated!")}}),c.Axis.units=f}(window,document,a),function(a,b,c){"use strict";function d(a,b,d,e){var f=e.highLow||c.getHighLow(b,e,a.pos);this.bounds=c.getBounds(d[a.rectEnd]-d[a.rectStart],f,e.scaleMinSpace||20,e.onlyInteger),this.range={min:this.bounds.min,max:this.bounds.max},c.AutoScaleAxis["super"].constructor.call(this,a,d,this.bounds.values,e)}function e(a){return this.axisLength*(+c.getMultiValue(a,this.units.pos)-this.bounds.min)/this.bounds.range}c.AutoScaleAxis=c.Axis.extend({constructor:d,projectValue:e})}(window,document,a),function(a,b,c){"use strict";function d(a,b,d,e){var f=e.highLow||c.getHighLow(b,e,a.pos);this.divisor=e.divisor||1,this.ticks=e.ticks||c.times(this.divisor).map(function(a,b){return f.low+(f.high-f.low)/this.divisor*b}.bind(this)),this.ticks.sort(function(a,b){return a-b}),this.range={min:f.low,max:f.high},c.FixedScaleAxis["super"].constructor.call(this,a,d,this.ticks,e),this.stepLength=this.axisLength/this.divisor}function e(a){return this.axisLength*(+c.getMultiValue(a,this.units.pos)-this.range.min)/(this.range.max-this.range.min)}c.FixedScaleAxis=c.Axis.extend({constructor:d,projectValue:e})}(window,document,a),function(a,b,c){"use strict";function d(a,b,d,e){c.StepAxis["super"].constructor.call(this,a,d,e.ticks,e);var f=Math.max(1,e.ticks.length-(e.stretch?1:0));this.stepLength=this.axisLength/f}function e(a,b){return this.stepLength*b}c.StepAxis=c.Axis.extend({constructor:d,projectValue:e})}(window,document,a),function(a,b,c){"use strict";function d(a){var b=c.normalizeData(this.data,a.reverseData,!0);this.svg=c.createSvg(this.container,a.width,a.height,a.classNames.chart);var d,e,g=this.svg.elem("g").addClass(a.classNames.gridGroup),h=this.svg.elem("g"),i=this.svg.elem("g").addClass(a.classNames.labelGroup),j=c.createChartRect(this.svg,a,f.padding);d=void 0===a.axisX.type?new c.StepAxis(c.Axis.units.x,b.normalized.series,j,c.extend({},a.axisX,{ticks:b.normalized.labels,stretch:a.fullWidth})):a.axisX.type.call(c,c.Axis.units.x,b.normalized.series,j,a.axisX),e=void 0===a.axisY.type?new c.AutoScaleAxis(c.Axis.units.y,b.normalized.series,j,c.extend({},a.axisY,{high:c.isNumeric(a.high)?a.high:a.axisY.high,low:c.isNumeric(a.low)?a.low:a.axisY.low})):a.axisY.type.call(c,c.Axis.units.y,b.normalized.series,j,a.axisY),d.createGridAndLabels(g,i,this.supportsForeignObject,a,this.eventEmitter),e.createGridAndLabels(g,i,this.supportsForeignObject,a,this.eventEmitter),a.showGridBackground&&c.createGridBackground(g,j,a.classNames.gridBackground,this.eventEmitter),b.raw.series.forEach(function(f,g){var i=h.elem("g");i.attr({"ct:series-name":f.name,"ct:meta":c.serialize(f.meta)}),i.addClass([a.classNames.series,f.className||a.classNames.series+"-"+c.alphaNumerate(g)].join(" "));var k=[],l=[];b.normalized.series[g].forEach(function(a,h){var i={x:j.x1+d.projectValue(a,h,b.normalized.series[g]),y:j.y1-e.projectValue(a,h,b.normalized.series[g])};k.push(i.x,i.y),l.push({value:a,valueIndex:h,meta:c.getMetaData(f,h)})}.bind(this));var m={lineSmooth:c.getSeriesOption(f,a,"lineSmooth"),showPoint:c.getSeriesOption(f,a,"showPoint"),showLine:c.getSeriesOption(f,a,"showLine"),showArea:c.getSeriesOption(f,a,"showArea"),areaBase:c.getSeriesOption(f,a,"areaBase")},n="function"==typeof m.lineSmooth?m.lineSmooth:m.lineSmooth?c.Interpolation.monotoneCubic():c.Interpolation.none(),o=n(k,l);if(m.showPoint&&o.pathElements.forEach(function(b){var h=i.elem("line",{x1:b.x,y1:b.y,x2:b.x+.01,y2:b.y},a.classNames.point).attr({"ct:value":[b.data.value.x,b.data.value.y].filter(c.isNumeric).join(","),"ct:meta":c.serialize(b.data.meta)});this.eventEmitter.emit("draw",{type:"point",value:b.data.value,index:b.data.valueIndex,meta:b.data.meta,series:f,seriesIndex:g,axisX:d,axisY:e,group:i,element:h,x:b.x,y:b.y})}.bind(this)),m.showLine){var p=i.elem("path",{d:o.stringify()},a.classNames.line,!0);this.eventEmitter.emit("draw",{type:"line",values:b.normalized.series[g],path:o.clone(),chartRect:j,index:g,series:f,seriesIndex:g,seriesMeta:f.meta,axisX:d,axisY:e,group:i,element:p})}if(m.showArea&&e.range){var q=Math.max(Math.min(m.areaBase,e.range.max),e.range.min),r=j.y1-e.projectValue(q);o.splitByCommand("M").filter(function(a){return a.pathElements.length>1}).map(function(a){var b=a.pathElements[0],c=a.pathElements[a.pathElements.length-1];return a.clone(!0).position(0).remove(1).move(b.x,r).line(b.x,b.y).position(a.pathElements.length+1).line(c.x,r)}).forEach(function(c){var h=i.elem("path",{d:c.stringify()},a.classNames.area,!0);this.eventEmitter.emit("draw",{type:"area",values:b.normalized.series[g],path:c.clone(),series:f,seriesIndex:g,axisX:d,axisY:e,chartRect:j,index:g,group:i,element:h})}.bind(this))}}.bind(this)),this.eventEmitter.emit("created",{bounds:e.bounds,chartRect:j,axisX:d,axisY:e,svg:this.svg,options:a})}function e(a,b,d,e){c.Line["super"].constructor.call(this,a,b,f,c.extend({},f,d),e)}var f={axisX:{offset:30,position:"end",labelOffset:{x:0,y:0},showLabel:!0,showGrid:!0,labelInterpolationFnc:c.noop,type:void 0},axisY:{offset:40,position:"start",labelOffset:{x:0,y:0},showLabel:!0,showGrid:!0,labelInterpolationFnc:c.noop,type:void 0,scaleMinSpace:20,onlyInteger:!1},width:void 0,height:void 0,showLine:!0,showPoint:!0,showArea:!1,areaBase:0,lineSmooth:!0,showGridBackground:!1,low:void 0,high:void 0,chartPadding:{top:15,right:15,bottom:5,left:10},fullWidth:!1,reverseData:!1,classNames:{chart:"ct-chart-line",label:"ct-label",labelGroup:"ct-labels",series:"ct-series",line:"ct-line",point:"ct-point",area:"ct-area",grid:"ct-grid",gridGroup:"ct-grids",gridBackground:"ct-grid-background",vertical:"ct-vertical",horizontal:"ct-horizontal",start:"ct-start",end:"ct-end"}};c.Line=c.Base.extend({constructor:e,createChart:d})}(window,document,a),function(a,b,c){"use strict";function d(a){var b,d;a.distributeSeries?(b=c.normalizeData(this.data,a.reverseData,a.horizontalBars?"x":"y"),b.normalized.series=b.normalized.series.map(function(a){return[a]})):b=c.normalizeData(this.data,a.reverseData,a.horizontalBars?"x":"y"),this.svg=c.createSvg(this.container,a.width,a.height,a.classNames.chart+(a.horizontalBars?" "+a.classNames.horizontalBars:""));var e=this.svg.elem("g").addClass(a.classNames.gridGroup),g=this.svg.elem("g"),h=this.svg.elem("g").addClass(a.classNames.labelGroup);if(a.stackBars&&0!==b.normalized.series.length){var i=c.serialMap(b.normalized.series,function(){
+return Array.prototype.slice.call(arguments).map(function(a){return a}).reduce(function(a,b){return{x:a.x+(b&&b.x)||0,y:a.y+(b&&b.y)||0}},{x:0,y:0})});d=c.getHighLow([i],a,a.horizontalBars?"x":"y")}else d=c.getHighLow(b.normalized.series,a,a.horizontalBars?"x":"y");d.high=+a.high||(0===a.high?0:d.high),d.low=+a.low||(0===a.low?0:d.low);var j,k,l,m,n,o=c.createChartRect(this.svg,a,f.padding);k=a.distributeSeries&&a.stackBars?b.normalized.labels.slice(0,1):b.normalized.labels,a.horizontalBars?(j=m=void 0===a.axisX.type?new c.AutoScaleAxis(c.Axis.units.x,b.normalized.series,o,c.extend({},a.axisX,{highLow:d,referenceValue:0})):a.axisX.type.call(c,c.Axis.units.x,b.normalized.series,o,c.extend({},a.axisX,{highLow:d,referenceValue:0})),l=n=void 0===a.axisY.type?new c.StepAxis(c.Axis.units.y,b.normalized.series,o,{ticks:k}):a.axisY.type.call(c,c.Axis.units.y,b.normalized.series,o,a.axisY)):(l=m=void 0===a.axisX.type?new c.StepAxis(c.Axis.units.x,b.normalized.series,o,{ticks:k}):a.axisX.type.call(c,c.Axis.units.x,b.normalized.series,o,a.axisX),j=n=void 0===a.axisY.type?new c.AutoScaleAxis(c.Axis.units.y,b.normalized.series,o,c.extend({},a.axisY,{highLow:d,referenceValue:0})):a.axisY.type.call(c,c.Axis.units.y,b.normalized.series,o,c.extend({},a.axisY,{highLow:d,referenceValue:0})));var p=a.horizontalBars?o.x1+j.projectValue(0):o.y1-j.projectValue(0),q=[];l.createGridAndLabels(e,h,this.supportsForeignObject,a,this.eventEmitter),j.createGridAndLabels(e,h,this.supportsForeignObject,a,this.eventEmitter),a.showGridBackground&&c.createGridBackground(e,o,a.classNames.gridBackground,this.eventEmitter),b.raw.series.forEach(function(d,e){var f,h,i=e-(b.raw.series.length-1)/2;f=a.distributeSeries&&!a.stackBars?l.axisLength/b.normalized.series.length/2:a.distributeSeries&&a.stackBars?l.axisLength/2:l.axisLength/b.normalized.series[e].length/2,h=g.elem("g"),h.attr({"ct:series-name":d.name,"ct:meta":c.serialize(d.meta)}),h.addClass([a.classNames.series,d.className||a.classNames.series+"-"+c.alphaNumerate(e)].join(" ")),b.normalized.series[e].forEach(function(g,k){var r,s,t,u;if(u=a.distributeSeries&&!a.stackBars?e:a.distributeSeries&&a.stackBars?0:k,r=a.horizontalBars?{x:o.x1+j.projectValue(g&&g.x?g.x:0,k,b.normalized.series[e]),y:o.y1-l.projectValue(g&&g.y?g.y:0,u,b.normalized.series[e])}:{x:o.x1+l.projectValue(g&&g.x?g.x:0,u,b.normalized.series[e]),y:o.y1-j.projectValue(g&&g.y?g.y:0,k,b.normalized.series[e])},l instanceof c.StepAxis&&(l.options.stretch||(r[l.units.pos]+=f*(a.horizontalBars?-1:1)),r[l.units.pos]+=a.stackBars||a.distributeSeries?0:i*a.seriesBarDistance*(a.horizontalBars?-1:1)),t=q[k]||p,q[k]=t-(p-r[l.counterUnits.pos]),void 0!==g){var v={};v[l.units.pos+"1"]=r[l.units.pos],v[l.units.pos+"2"]=r[l.units.pos],!a.stackBars||"accumulate"!==a.stackMode&&a.stackMode?(v[l.counterUnits.pos+"1"]=p,v[l.counterUnits.pos+"2"]=r[l.counterUnits.pos]):(v[l.counterUnits.pos+"1"]=t,v[l.counterUnits.pos+"2"]=q[k]),v.x1=Math.min(Math.max(v.x1,o.x1),o.x2),v.x2=Math.min(Math.max(v.x2,o.x1),o.x2),v.y1=Math.min(Math.max(v.y1,o.y2),o.y1),v.y2=Math.min(Math.max(v.y2,o.y2),o.y1);var w=c.getMetaData(d,k);s=h.elem("line",v,a.classNames.bar).attr({"ct:value":[g.x,g.y].filter(c.isNumeric).join(","),"ct:meta":c.serialize(w)}),this.eventEmitter.emit("draw",c.extend({type:"bar",value:g,index:k,meta:w,series:d,seriesIndex:e,axisX:m,axisY:n,chartRect:o,group:h,element:s},v))}}.bind(this))}.bind(this)),this.eventEmitter.emit("created",{bounds:j.bounds,chartRect:o,axisX:m,axisY:n,svg:this.svg,options:a})}function e(a,b,d,e){c.Bar["super"].constructor.call(this,a,b,f,c.extend({},f,d),e)}var f={axisX:{offset:30,position:"end",labelOffset:{x:0,y:0},showLabel:!0,showGrid:!0,labelInterpolationFnc:c.noop,scaleMinSpace:30,onlyInteger:!1},axisY:{offset:40,position:"start",labelOffset:{x:0,y:0},showLabel:!0,showGrid:!0,labelInterpolationFnc:c.noop,scaleMinSpace:20,onlyInteger:!1},width:void 0,height:void 0,high:void 0,low:void 0,referenceValue:0,chartPadding:{top:15,right:15,bottom:5,left:10},seriesBarDistance:15,stackBars:!1,stackMode:"accumulate",horizontalBars:!1,distributeSeries:!1,reverseData:!1,showGridBackground:!1,classNames:{chart:"ct-chart-bar",horizontalBars:"ct-horizontal-bars",label:"ct-label",labelGroup:"ct-labels",series:"ct-series",bar:"ct-bar",grid:"ct-grid",gridGroup:"ct-grids",gridBackground:"ct-grid-background",vertical:"ct-vertical",horizontal:"ct-horizontal",start:"ct-start",end:"ct-end"}};c.Bar=c.Base.extend({constructor:e,createChart:d})}(window,document,a),function(a,b,c){"use strict";function d(a,b,c){var d=b.x>a.x;return d&&"explode"===c||!d&&"implode"===c?"start":d&&"implode"===c||!d&&"explode"===c?"end":"middle"}function e(a){var b,e,f,h,i,j=c.normalizeData(this.data),k=[],l=a.startAngle;this.svg=c.createSvg(this.container,a.width,a.height,a.donut?a.classNames.chartDonut:a.classNames.chartPie),e=c.createChartRect(this.svg,a,g.padding),f=Math.min(e.width()/2,e.height()/2),i=a.total||j.normalized.series.reduce(function(a,b){return a+b},0);var m=c.quantity(a.donutWidth);"%"===m.unit&&(m.value*=f/100),f-=a.donut&&!a.donutSolid?m.value/2:0,h="outside"===a.labelPosition||a.donut&&!a.donutSolid?f:"center"===a.labelPosition?0:a.donutSolid?f-m.value/2:f/2,h+=a.labelOffset;var n={x:e.x1+e.width()/2,y:e.y2+e.height()/2},o=1===j.raw.series.filter(function(a){return a.hasOwnProperty("value")?0!==a.value:0!==a}).length;j.raw.series.forEach(function(a,b){k[b]=this.svg.elem("g",null,null)}.bind(this)),a.showLabel&&(b=this.svg.elem("g",null,null)),j.raw.series.forEach(function(e,g){if(0!==j.normalized.series[g]||!a.ignoreEmptyValues){k[g].attr({"ct:series-name":e.name}),k[g].addClass([a.classNames.series,e.className||a.classNames.series+"-"+c.alphaNumerate(g)].join(" "));var p=i>0?l+j.normalized.series[g]/i*360:0,q=Math.max(0,l-(0===g||o?0:.2));p-q>=359.99&&(p=q+359.99);var r,s,t,u=c.polarToCartesian(n.x,n.y,f,q),v=c.polarToCartesian(n.x,n.y,f,p),w=new c.Svg.Path(!a.donut||a.donutSolid).move(v.x,v.y).arc(f,f,0,p-l>180,0,u.x,u.y);a.donut?a.donutSolid&&(t=f-m.value,r=c.polarToCartesian(n.x,n.y,t,l-(0===g||o?0:.2)),s=c.polarToCartesian(n.x,n.y,t,p),w.line(r.x,r.y),w.arc(t,t,0,p-l>180,1,s.x,s.y)):w.line(n.x,n.y);var x=a.classNames.slicePie;a.donut&&(x=a.classNames.sliceDonut,a.donutSolid&&(x=a.classNames.sliceDonutSolid));var y=k[g].elem("path",{d:w.stringify()},x);if(y.attr({"ct:value":j.normalized.series[g],"ct:meta":c.serialize(e.meta)}),a.donut&&!a.donutSolid&&(y._node.style.strokeWidth=m.value+"px"),this.eventEmitter.emit("draw",{type:"slice",value:j.normalized.series[g],totalDataSum:i,index:g,meta:e.meta,series:e,group:k[g],element:y,path:w.clone(),center:n,radius:f,startAngle:l,endAngle:p}),a.showLabel){var z;z=1===j.raw.series.length?{x:n.x,y:n.y}:c.polarToCartesian(n.x,n.y,h,l+(p-l)/2);var A;A=j.normalized.labels&&!c.isFalseyButZero(j.normalized.labels[g])?j.normalized.labels[g]:j.normalized.series[g];var B=a.labelInterpolationFnc(A,g);if(B||0===B){var C=b.elem("text",{dx:z.x,dy:z.y,"text-anchor":d(n,z,a.labelDirection)},a.classNames.label).text(""+B);this.eventEmitter.emit("draw",{type:"label",index:g,group:b,element:C,text:""+B,x:z.x,y:z.y})}}l=p}}.bind(this)),this.eventEmitter.emit("created",{chartRect:e,svg:this.svg,options:a})}function f(a,b,d,e){c.Pie["super"].constructor.call(this,a,b,g,c.extend({},g,d),e)}var g={width:void 0,height:void 0,chartPadding:5,classNames:{chartPie:"ct-chart-pie",chartDonut:"ct-chart-donut",series:"ct-series",slicePie:"ct-slice-pie",sliceDonut:"ct-slice-donut",sliceDonutSolid:"ct-slice-donut-solid",label:"ct-label"},startAngle:0,total:void 0,donut:!1,donutSolid:!1,donutWidth:60,showLabel:!0,labelOffset:0,labelPosition:"inside",labelInterpolationFnc:c.noop,labelDirection:"neutral",reverseData:!1,ignoreEmptyValues:!1};c.Pie=c.Base.extend({constructor:f,createChart:e,determineAnchorPosition:d})}(window,document,a),a});
+//# sourceMappingURL=chartist.min.js.map</script>
+    <script>
+        (function(window, document, Chartist) {
+  'use strict';
+
+  var defaultOptions = {
+    labelClass: 'ct-label',
+    labelOffset: {
+      x: 0,
+      y: -10
+    },
+    textAnchor: 'middle',
+    labelInterpolationFnc: Chartist.noop
+  };
+
+  Chartist.plugins = Chartist.plugins || {};
+  Chartist.plugins.ctPointLabels = function(options) {
+
+    options = Chartist.extend({}, defaultOptions, options);
+
+    return function ctPointLabels(chart) {
+      if(chart instanceof Chartist.Line) {
+        chart.on('draw', function(data) {
+          if(data.type === 'point') {
+            data.group.elem('text', {
+              x: data.x + options.labelOffset.x,
+              y: data.y + options.labelOffset.y,
+              style: 'text-anchor: ' + options.textAnchor
+            }, options.labelClass).text(options.labelInterpolationFnc(data.value.x === undefined ? data.value.y : data.value.x + ', ' + data.value.y));
+          }
+        });
+      }
+    };
+  };
+
+}(window, document, Chartist));
+(function (window, document, Chartist) {
+    'use strict';
+
+    var axisDefaults = {
+        axisTitle: '',
+        axisClass: 'ct-axis-title',
+        offset: {
+            x: 0,
+            y: 0
+        },
+        textAnchor: 'middle',
+        flipText: false
+    };
+
+    var defaultOptions = {
+        xAxis: axisDefaults,
+        yAxis: axisDefaults
+    };
+
+    var getTitle = function (title) {
+        if (title instanceof Function) {
+            return title();
+        }
+        return title;
+    };
+
+    var getClasses = function (classes) {
+        if (classes instanceof Function) {
+            return classes();
+        }
+        return classes;
+    };
+
+    Chartist.plugins = Chartist.plugins || {};
+    Chartist.plugins.ctAxisTitle = function(options) {
+
+        options = Chartist.extend({}, defaultOptions, options);
+
+        return function ctAxisTitle(chart) {
+
+            chart.on('created', function(data) {
+
+                if (!options.axisX.axisTitle && !options.axisY.axisTitle) {
+                    throw new Error(
+                        'ctAxisTitle plugin - You must provide at least one axis title'
+                    );
+                } else if (!data.axisX && !data.axisY) {
+                    throw new Error(
+                        'ctAxisTitle plugin can only be used on charts that have at least one axis'
+                    );
+                }
+
+                var xPos;
+                var yPos;
+                var title;
+
+                //position axis X title
+                if (options.axisX.axisTitle && data.axisX) {
+
+                    xPos = (data.axisX.axisLength / 2) + data.options.axisY.offset +
+                        data.options.chartPadding.left;
+
+                    yPos = data.options.chartPadding.top;
+
+                    if (data.options.axisY.position === 'end') {
+                        xPos -= data.options.axisY.offset;
+                    }
+
+                    if (data.options.axisX.position === 'end') {
+                        yPos += data.axisY.axisLength;
+                    }
+
+                    title = new Chartist.Svg("text");
+                    title.addClass(getClasses(options.axisX.axisClass));
+                    title.text(getTitle(options.axisX.axisTitle));
+                    title.attr({
+                        x: xPos + options.axisX.offset.x,
+                        y: yPos + options.axisX.offset.y,
+                        "text-anchor": options.axisX.textAnchor
+                    });
+
+                    data.svg.append(title, true);
+
+                }
+
+                //position axis Y title
+                if (options.axisY.axisTitle && data.axisY) {
+                    xPos = 0;
+
+
+                    yPos = (data.axisY.axisLength / 2) + data.options.chartPadding
+                            .top;
+
+                    if (data.options.axisX.position === 'start') {
+                        yPos += data.options.axisX.offset;
+                    }
+
+                    if (data.options.axisY.position === 'end') {
+                        xPos = data.axisX.axisLength;
+                    }
+
+                    var transform = 'rotate(' + (options.axisY.flipTitle ? -
+                                90 : 90) + ', ' + xPos + ', ' + yPos + ')';
+
+                    title = new Chartist.Svg("text");
+                    title.addClass(getClasses(options.axisY.axisClass));
+                    title.text(getTitle(options.axisY.axisTitle));
+                    title.attr({
+                        x: xPos + options.axisY.offset.x,
+                        y: yPos + options.axisY.offset.y,
+                        transform: transform,
+                        "text-anchor": options.axisY.textAnchor
+                    });
+                    data.svg.append(title, true);
+                }
+            });
+        };
+    };
+}(window, document, Chartist));
+/**
+ * Chartist.js plugin to display a data label on top of the points in a line chart.
+ *
+ */
+/* global Chartist */
+(function (window, document, Chartist) {
+  'use strict';
+
+  var defaultOptions = {
+    currency: undefined,
+    currencyFormatCallback: undefined,
+    tooltipOffset: {
+      x: 0,
+      y: -20
+    },
+    anchorToPoint: false,
+    appendToBody: false,
+    class: undefined,
+    pointClass: 'ct-point'
+  };
+
+  Chartist.plugins = Chartist.plugins || {};
+  Chartist.plugins.tooltip = function (options) {
+    options = Chartist.extend({}, defaultOptions, options);
+
+    return function tooltip(chart) {
+      var tooltipSelector = options.pointClass;
+      if (chart instanceof Chartist.Bar) {
+        tooltipSelector = 'ct-bar';
+      } else if (chart instanceof Chartist.Pie) {
+        // Added support for donut graph
+        if (chart.options.donut) {
+          tooltipSelector = 'ct-slice-donut';
+        } else {
+          tooltipSelector = 'ct-slice-pie';
+        }
+      }
+
+      var $chart = chart.container;
+      var $toolTip = $chart.querySelector('.chartist-tooltip');
+      if (!$toolTip) {
+        $toolTip = document.createElement('div');
+        $toolTip.className = (!options.class) ? 'chartist-tooltip' : 'chartist-tooltip ' + options.class;
+        if (!options.appendToBody) {
+          $chart.appendChild($toolTip);
+        } else {
+          document.body.appendChild($toolTip);
+        }
+      }
+      var height = $toolTip.offsetHeight;
+      var width = $toolTip.offsetWidth;
+
+      hide($toolTip);
+
+      function on(event, selector, callback) {
+        $chart.addEventListener(event, function (e) {
+          if (!selector || hasClass(e.target, selector))
+            callback(e);
+        });
+      }
+
+      on('mouseover', tooltipSelector, function (event) {
+        var $point = event.target;
+        var tooltipText = '';
+
+        var isPieChart = (chart instanceof Chartist.Pie) ? $point : $point.parentNode;
+        var seriesName = (isPieChart) ? $point.parentNode.getAttribute('ct:meta') || $point.parentNode.getAttribute('ct:series-name') : '';
+        var meta = $point.getAttribute('ct:meta') || seriesName || '';
+        var hasMeta = !!meta;
+        var value = $point.getAttribute('ct:value');
+
+        if (options.transformTooltipTextFnc && typeof options.transformTooltipTextFnc === 'function') {
+          value = options.transformTooltipTextFnc(value);
+        }
+
+        if (options.tooltipFnc && typeof options.tooltipFnc === 'function') {
+          tooltipText = options.tooltipFnc(meta, value);
+        } else {
+          if (options.metaIsHTML) {
+            var txt = document.createElement('textarea');
+            txt.innerHTML = meta;
+            meta = txt.value;
+          }
+
+          meta = '<span class="chartist-tooltip-meta">' + meta + '</span>';
+
+          if (hasMeta) {
+            tooltipText += meta + '<br>';
+          } else {
+            // For Pie Charts also take the labels into account
+            // Could add support for more charts here as well!
+            if (chart instanceof Chartist.Pie) {
+              var label = next($point, 'ct-label');
+              if (label) {
+                tooltipText += text(label) + '<br>';
+              }
+            }
+          }
+
+          if (value) {
+            if (options.currency) {
+              if (options.currencyFormatCallback != undefined) {
+                value = options.currencyFormatCallback(value, options);
+              } else {
+                value = options.currency + value.replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, '$1,');
+              }
+            }
+            value = '<span class="chartist-tooltip-value">' + value + '</span>';
+            tooltipText += value;
+          }
+        }
+
+        if(tooltipText) {
+          $toolTip.innerHTML = tooltipText;
+          setPosition(event);
+          show($toolTip);
+
+          // Remember height and width to avoid wrong position in IE
+          height = $toolTip.offsetHeight;
+          width = $toolTip.offsetWidth;
+        }
+      });
+
+      on('mouseout', tooltipSelector, function () {
+        hide($toolTip);
+      });
+
+      on('mousemove', null, function (event) {
+        if (false === options.anchorToPoint)
+          setPosition(event);
+      });
+
+      function setPosition(event) {
+        height = height || $toolTip.offsetHeight;
+        width = width || $toolTip.offsetWidth;
+        var offsetX = - width / 2 + options.tooltipOffset.x
+        var offsetY = - height + options.tooltipOffset.y;
+        var anchorX, anchorY;
+
+        if (!options.appendToBody) {
+          var box = $chart.getBoundingClientRect();
+          var left = event.pageX - box.left - window.pageXOffset ;
+          var top = event.pageY - box.top - window.pageYOffset ;
+
+          if (true === options.anchorToPoint && event.target.x2 && event.target.y2) {
+            anchorX = parseInt(event.target.x2.baseVal.value);
+            anchorY = parseInt(event.target.y2.baseVal.value);
+          }
+
+          $toolTip.style.top = (anchorY || top) + offsetY + 'px';
+          $toolTip.style.left = (anchorX || left) + offsetX + 'px';
+        } else {
+          $toolTip.style.top = event.pageY + offsetY + 'px';
+          $toolTip.style.left = event.pageX + offsetX + 'px';
+        }
+      }
+    }
+  };
+
+  function show(element) {
+    if(!hasClass(element, 'tooltip-show')) {
+      element.className = element.className + ' tooltip-show';
+    }
+  }
+
+  function hide(element) {
+    var regex = new RegExp('tooltip-show' + '\\s*', 'gi');
+    element.className = element.className.replace(regex, '').trim();
+  }
+
+  function hasClass(element, className) {
+    return (' ' + element.getAttribute('class') + ' ').indexOf(' ' + className + ' ') > -1;
+  }
+
+  function next(element, className) {
+    do {
+      element = element.nextSibling;
+    } while (element && !hasClass(element, className));
+    return element;
+  }
+
+  function text(element) {
+    return element.innerText || element.textContent;
+  }
+
+} (window, document, Chartist));
+
+
+/*
+Chartist legend plugin
+
+Internet Systems Consortium license
+===================================
+
+Copyright (c) 2016, Code Yellow B.V.
+
+Permission to use, copy, modify, and/or distribute this software for any purpose
+with or without fee is hereby granted, provided that the above copyright notice
+and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+*/
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['chartist'], function (chartist) {
+            return (root.returnExportsGlobal = factory(chartist));
+        });
+    } else if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like enviroments that support module.exports,
+        // like Node.
+        module.exports = factory(require('chartist'));
+    } else {
+        root['Chartist.plugins.legend'] = factory(root.Chartist);
+    }
+}(this, function (Chartist) {
+    /**
+     * This Chartist plugin creates a legend to show next to the chart.
+     *
+     */
+    'use strict';
+
+    var defaultOptions = {
+        className: '',
+        classNames: false,
+        removeAll: false,
+        legendNames: false,
+        clickable: true,
+        onClick: null,
+        position: 'top'
+    };
+
+    Chartist.plugins = Chartist.plugins || {};
+
+    Chartist.plugins.legend = function (options) {
+
+        function compareNumbers(a, b) {
+            return a - b;
+        }
+
+        // Catch invalid options
+        if (options && options.position) {
+           if (!(options.position === 'top' || options.position === 'bottom' || options.position instanceof HTMLElement)) {
+              throw Error('The position you entered is not a valid position');
+           }
+           if(options.position instanceof HTMLElement){
+              // Detatch DOM element from options object, because Chartist.extend currently chokes on circular references present in HTMLElements
+              var cachedDOMPosition = options.position;
+              delete options.position;
+           }
+        }
+
+        options = Chartist.extend({}, defaultOptions, options);
+
+        if(cachedDOMPosition){
+            // Reattatch the DOM Element position if it was removed before
+            options.position = cachedDOMPosition
+        }
+
+        return function legend(chart) {
+            var existingLegendElement = chart.container.querySelector('.ct-legend');
+            if (existingLegendElement) {
+                // Clear legend if already existing.
+                existingLegendElement.parentNode.removeChild(existingLegendElement);
+            }
+
+            // Set a unique className for each series so that when a series is removed,
+            // the other series still have the same color.
+            if (options.clickable) {
+                var newSeries = chart.data.series.map(function (series, seriesIndex) {
+                    if (typeof series !== 'object') {
+                        series = {
+                            value: series
+                        };
+                    }
+
+                    series.className = series.className || chart.options.classNames.series + '-' + Chartist.alphaNumerate(seriesIndex);
+                    return series;
+                });
+                chart.data.series = newSeries;
+            }
+
+            var legendElement = document.createElement('ul'),
+                isPieChart = chart instanceof Chartist.Pie;
+            legendElement.className = 'ct-legend';
+            if (chart instanceof Chartist.Pie) {
+                legendElement.classList.add('ct-legend-inside');
+            }
+            if (typeof options.className === 'string' && options.className.length > 0) {
+                legendElement.classList.add(options.className);
+            }
+
+            if (chart.options.width) {
+                legendElement.style.cssText = 'width: ' + chart.options.width + 'px;margin: 0 auto;';
+            }
+
+            var removedSeries = [],
+                originalSeries = chart.data.series.slice(0);
+
+            // Get the right array to use for generating the legend.
+            var legendNames = chart.data.series,
+                useLabels = isPieChart && chart.data.labels && chart.data.labels.length;
+            if (useLabels) {
+                var originalLabels = chart.data.labels.slice(0);
+                legendNames = chart.data.labels;
+            }
+            legendNames = options.legendNames || legendNames;
+
+            // Check if given class names are viable to append to legends
+            var classNamesViable = (Array.isArray(options.classNames) && (options.classNames.length === legendNames.length));
+
+            // Loop through all legends to set each name in a list item.
+            legendNames.forEach(function (legend, i) {
+               var li = document.createElement('li');
+               li.className = 'ct-series-' + i;
+               // Append specific class to a legend element, if viable classes are given
+               if (classNamesViable) {
+                  li.className += ' ' + options.classNames[i];
+               }
+               li.setAttribute('data-legend', i);
+               li.textContent = legend.name || legend;
+               legendElement.appendChild(li);
+            });
+
+            chart.on('created', function (data) {
+               // Append the legend element to the DOM
+               if(!(options.position instanceof HTMLElement))
+               {
+                  switch (options.position) {
+                     case 'top':
+                        chart.container.insertBefore(legendElement, chart.container.childNodes[0]);
+                        break;
+
+                     case 'bottom':
+                        chart.container.insertBefore(legendElement, null);
+                        break;
+                   }
+               }
+               else {
+                  // Appends the legend element as the last child of a given HTMLElement
+                  options.position.insertBefore(legendElement, null);
+               }
+            });
+
+            if (options.clickable) {
+                legendElement.addEventListener('click', function (e) {
+                    var li = e.target;
+                    if (li.parentNode !== legendElement || !li.hasAttribute('data-legend'))
+                        return;
+                    e.preventDefault();
+
+                    var seriesIndex = parseInt(li.getAttribute('data-legend')),
+                        removedSeriesIndex = removedSeries.indexOf(seriesIndex);
+
+                    if (removedSeriesIndex > -1) {
+                        // Add to series again.
+                        removedSeries.splice(removedSeriesIndex, 1);
+                        li.classList.remove('inactive');
+                    } else {
+                        if (!options.removeAll) {
+                             // Remove from series, only if a minimum of one series is still visible.
+                          if ( chart.data.series.length > 1) {
+                             removedSeries.push(seriesIndex);
+                             li.classList.add('inactive');
+                          }
+                             // Set all series as active.
+                          else {
+                             removedSeries = [];
+                             var seriesItems = Array.prototype.slice.call(legendElement.childNodes);
+                             seriesItems.forEach(function (item) {
+                                item.classList.remove('inactive');
+                             });
+                          }
+                       }
+                       else {
+                          // Remove series unaffected if it is the last or not
+                          removedSeries.push(seriesIndex);
+                          li.classList.add('inactive');
+                       }
+                    }
+
+                    // Reset the series to original and remove each series that
+                    // is still removed again, to remain index order.
+                    var seriesCopy = originalSeries.slice(0);
+                    if (useLabels) {
+                        var labelsCopy = originalLabels.slice(0);
+                    }
+
+                    // Reverse sort the removedSeries to prevent removing the wrong index.
+                    removedSeries.sort(compareNumbers).reverse();
+
+                    removedSeries.forEach(function (series) {
+                        seriesCopy.splice(series, 1);
+                        if (useLabels) {
+                            labelsCopy.splice(series, 1);
+                        }
+                    });
+
+                    if (options.onClick) {
+                        options.onClick(chart, e);
+                    }
+
+                    chart.data.series = seriesCopy;
+                    if (useLabels) {
+                        chart.data.labels = labelsCopy;
+                    }
+
+                    chart.update();
+                });
+            }
+
+        };
+
+    };
+
+    return Chartist.plugins.legend;
+
+}));
+
+    
+new Chartist.Line('.memchart', {
+  labels: [],
+  series: [
+    [{meta: '134.134.101.193', x: 5, y: 72},{meta: '134.134.101.193', x: 10, y: 73},{meta: '134.134.101.193', x: 18, y: 73},{meta: '134.134.101.193', x: 25, y: 74},{meta: '134.134.101.193', x: 35, y: 74},{meta: '134.134.101.193', x: 51, y: 76},{meta: '134.134.101.193', x: 67, y: 78},{meta: '134.134.101.193', x: 87, y: 80},{meta: '134.134.101.193', x: 123, y: 82},{meta: '134.134.101.193', x: 171, y: 85},{meta: '134.134.101.193', x: 212, y: 92},{meta: '134.134.101.193', x: 278, y: 105},{meta: '134.134.101.193', x: 406, y: 140},{meta: '134.134.101.193', x: 449, y: 275},{meta: '134.134.101.193', x: 443, y: 279},{meta: '134.134.101.193', x: 445, y: 280},{meta: '134.134.101.193', x: 454, y: 279},{meta: '134.134.101.193', x: 451, y: 281},{meta: '134.134.101.193', x: 455, y: 280}]
+  ]
+}, {
+  axisX: {
+    type: Chartist.AutoScaleAxis,
+    onlyInteger: true
+  },
+  lineSmooth: Chartist.Interpolation.none({
+  }),
+  chartPadding: {
+    top: 20,
+    right: 0,
+    bottom: 30,
+    left: 30
+  },
+  plugins: [
+    Chartist.plugins.tooltip({
+        anchorToPoint: true,
+    }),
+    Chartist.plugins.legend({
+        legendNames: ['134.134.101.193'],
+    }),
+    Chartist.plugins.ctAxisTitle({
+      axisX: {
+        axisTitle: 'Bandwidth (GB/s)',
+        axisClass: 'ct-axis-title',
+        offset: {
+          x: 0,
+          y: 50
+        },
+        textAnchor: 'middle'
+      },
+      axisY: {
+        axisTitle: 'Latency  (ns)',
+        axisClass: 'ct-axis-title',
+        offset: {
+          x: 0,
+          y: 0
+        },
+        textAnchor: 'middle',
+        flipTitle: false
+      }
+    })
+  ]
+});
+
+
+
+</script>
+
+
+</body></html>

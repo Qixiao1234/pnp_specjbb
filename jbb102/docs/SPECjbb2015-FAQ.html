@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <title>The SPECjbb2015 Benchmark - Frequently Asked Questions (FAQ)</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=ISO-8859-1"/>
+  <meta name="robots" content="noindex"/>
+ </head>
+<body style="background-color: rgb(255, 255, 255);">
+<font face="arial" size="2"><a name="PageTop"></a>
+</font>
+<h3><font face="arial" size="2"><a name="FAQ_TOC"> </a>The SPECjbb2015 Benchmark - Frequently Asked Questions (FAQ) at Sep 14, 2017</font></h3>
+<div class="twikiToc">
+<font face="arial" size="2"> </font>
+<ul>
+  <font face="arial" size="2">
+  <li> <a href="#About_the_Benchmark">About the Benchmark</a>
+    <ul>
+      <li> <a href="#Hardware_Requirements">Hardware Requirements</a> </li>
+      <li> <a href="#Software_Requirements">Software Requirements</a> </li>
+      <li> <a href="#Issues">Issues</a> </li>
+      <li> <a href="#Acquiring_the_Benchmark">Acquiring the Benchmark</a> </li>
+      <li> <a href="#Contacting_SPEC">Contacting SPEC</a> </li>
+      <li> <a href="#Disclaimer">Disclaimer</a> </li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+
+
+<p>
+<font face="arial" size="2">Common questions are addressed in this FAQ or in the benchmark documentation on the <a href="http://www.spec.org/jbb2015"> SPECjbb2015 Benchmark Information</a> web page. <br>
+<br>
+This version of the FAQ is aligned with the 1.02 version of the SPECjbb2015 benchmark. <br> Updates to this FAQ may be added here when needed. <br>
+<br>
+For all other questions, send your query via e-mail to: <a href="mailto:jbb2015support@spec.org">jbb2015support@spec.org</a> with "SPECjbb" in the subject line.
+</font></p>
+<h4><font face="arial" size="2"><a name="About_the_Benchmark"> </a>
+About the Benchmark </font></h4>
+<ol>
+  <font face="arial" size="2">
+  <li> The SPECjbb2015 benchmark replaces SPECjbb2013 as the next generation Java server business benchmark. </li>
+
+</ol>
+
+
+<h5><font face="arial" size="2"><a name="Hardware_Requirements"> </a> Hardware Requirements </font></h5>
+<ol>
+  <font face="arial" size="2">
+  <li> What is the minimum hardware required?
+    <ul>
+      <li> At minimum, a server with 8GB of RAM is required. 24GB and above is recommended for performance runs</li>
+    </ul>
+  </li>
+
+</ol>
+
+
+<h5><font face="arial" size="2"><a name="Software_Requirements"> </a> Software Requirements </font></h5>
+<ol>
+  <li> What Operating Systems are supported?
+    <ul>
+      <li> On the SUT side, the workload is designed to run on any OS for which a Java SE 7 VM or higher is available. </li>
+    </ul>
+  </li>
+  <li> What other software will I need?
+    <ul>
+      <li> A Java SE 7 (or higher) virtual machine (JVM).</li>
+      <li> The workload is written in Java to enable the highest degree of portability across software operating environments. </li>
+    </ul>
+  </li>
+</ol>
+
+<h5><font face="arial" size="2"><a name="Issues"> </a> Issues </font></h5>
+<ol>
+  <font face="arial" size="2">
+  <li> How do I run the benchmark with Java SE 9?
+    <ul>
+      <li>Due to a change introduced with the Java module system, you will need to add the following option to your java execute line(s) in your run scripts.
+        <ul>
+	  <li> <b><code>--add-modules=java.xml.bind</code></b></li>
+	</ul>
+      </li>
+    </ul>
+  </li>
+  <li> Why is the reported default value for <b><code>specjbb.forkjoin.workers</code></b> different from what I've previously seen?
+    <ul>
+       <li> As of Java SE 8u131 and Java SE 9 (and later), a bug fix [<a href="https://bugs.openjdk.java.net/browse/JDK-6515172">JDK-6515172</a>] was made that corrected the behavior of the <b><code>avaialbleProcessors()</code></b> API in Java. The API is defined to return the number of processors available to the JVM. Prior to these Java SE releases, it always reported the total number of HW processors available on the machine. It now reports the number of processors available to the JVM as limited by Processor and NUMA bindings.</li>
+       <li>Regardless of the Java SE release, the default value is not expected to be an optimal setting for any given SUT. <u>It is customary practice, and recommended, that the user set this property to a optimal value for their SUT.</u></li>
+       <li>For more information, see the <a href="http://spec.org/jbb2015/docs/knownissues.html">SPECjbb2015 Known Issues</a> page.</li>
+    </ul>
+  </li>
+  <li> Where can I look to address other issues?
+    <ul>
+      <li> See the <a href="http://spec.org/jbb2015/docs/userguide.pdf">SPECjbb2015 Benchmark User Guide</a>
+      <li> See the <a href="http://spec.org/jbb2015/docs/knownissues.html">SPECjbb2015 Known Issues</a> page.</li>
+
+    </ul>
+  </li>
+</ol>
+
+
+<h5><font face="arial" size="2"><a name="Acquiring_the_Benchmark"> </a> Acquiring the Benchmark </font></h5>
+<ol>
+  <li> How much does the benchmark cost?
+    <ul>
+      <li> The cost of the benchmark and the order form are on the web at: <a href="http://www.spec.org/order.html" target="_top">http://www.spec.org/order.html</a>
+      </li>
+    </ul>
+  </li>
+  <li> How do I order the benchmark?
+    <ul>
+      <li> You will find an order form at: <a href="http://www.spec.org/order.html" target="_top">http://www.spec.org/order.html</a>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+
+<h5><font face="arial" size="2"><a name="Contacting_SPEC"> </a> Contacting SPEC </font></h5>
+<ol>
+  <li> I have a question or problem that isn't covered in the the documentation.
+    <ul>
+      <li> Send your query via e-mail to: <a href="mailto:jbb2015support@spec.org">jbb2015support@spec.org</a> with "SPECjbb" in the subject line. </li>
+    </ul>
+  </li>
+</ol>
+<BR>
+
+
+<br>
+<h5><font face="arial" size="2"><a name="Disclaimer"> </a> Disclaimer </font></h5>
+<p>
+<font face="arial" size="2">
+Product and service names mentioned herein may be the trademarks of their respective owners.<BR>
+Copyright (c) 2007-2017 Standard Performance Evaluation Corporation (SPEC).<br>
+All Rights Reserved.
+</font></p>
+<p><font face="arial" size="2"><a name="PageBottom"></a>
+</font></p>
+</body>
+</html>
+
