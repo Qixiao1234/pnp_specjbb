@@ -1,27 +1,16 @@
- 
-##############################################################
-##########General Options ####################################
-ID tag given is:: 1009_LOADLEVEL_test_jdk-11.0.2_jbb103_NONE_23-01-29_110922
-Type of data collection we are doing is:: NONE
-Number of NUMA Nodes using:: 2
-Additional JVM options:: 
-All JVM options:: -showversion -XX:ParallelGCThreads=64 -Xms64g -Xmx64g -Xmn62g -XX:UseAVX=0 -XX:+UseParallelGC -XX:+UseLargePages -XX:+AlwaysPreTouch -XX:-UseAdaptiveSizePolicy -XX:SurvivorRatio=28 -XX:MaxTenuringThreshold=15 -XX:InlineSmallCode=10k -verbose:gc -XX:-UseCountedLoopSafepoints -XX:LoopUnrollLimit=20 -XX:MaxGCPauseMillis=500 -XX:AdaptiveSizeMajorGCDecayTimeScale=12 -XX:AdaptiveSizeDecrementScaleFactor=2 -XX:TargetSurvivorRatio=99 -XX:LargePageSizeInBytes=1G -XX:AllocatePrefetchLines=3 -XX:AllocateInstancePrefetchLines=2 -XX:AllocatePrefetchStepSize=128 -XX:AllocatePrefetchDistance=384 -Xms96g -Xmx96g -Xmn94g -XX:ParallelGCThreads=96 
-Controller JVM options:: -server -Xms2g -Xmx2g -Xmn1536m -XX:UseAVX=0 -XX:+UseLargePages -XX:LargePageSizeInBytes=1G -XX:+UseParallelGC -XX:ParallelGCThreads=2 
-Injector JVM options:: -server -Xms2g -Xmx2g -Xmn1536m -XX:UseAVX=0 -XX:+UseLargePages -XX:LargePageSizeInBytes=1G -XX:+UseParallelGC -XX:ParallelGCThreads=2
-Full path of JAVA used:: /usr/lib/jvm/java-11-openjdk-11*/bin/java
-##################################################################
-##########SPECjbb2015 Options ####################################
-Kit version we are using:: test
-Starting RT curve at 0 percent
-Number of Fork Join Threads to use on Tier1:: 168
-Number of Fork Join Threads to use on Tier2:: 6
-Number of Fork Join Threads to use on Tier3:: 29
-Groups count: 2
-JVM options for Controller:-server -Xms2g -Xmx2g -Xmn1536m -XX:UseAVX=0 -XX:+UseLargePages -XX:LargePageSizeInBytes=1G -XX:+UseParallelGC -XX:ParallelGCThreads=2 
-JVM options for Injector:-server -Xms2g -Xmx2g -Xmn1536m -XX:UseAVX=0 -XX:+UseLargePages -XX:LargePageSizeInBytes=1G -XX:+UseParallelGC -XX:ParallelGCThreads=2
 
 
-************Latencies*********************************
-Linux ocsbesrhlrepo01.amr.corp.intel.com 5.15.16 #1 SMP PREEMPT Tue Jan 25 02:30:36 EST 2022 x86_64 x86_64 x86_64 GNU/Linux
-/usr/lib/jvm/java-11-openjdk-11*/bin/java -server -Xms2g -Xmx2g -Xmn1536m -XX:UseAVX=0 -XX:+UseLargePages -XX:LargePageSizeInBytes=1G -XX:+UseParallelGC -XX:ParallelGCThreads=2  -jar ../specjbb2015.jar -m MULTICONTROLLER
-Linux ocsbesrhlrepo01.amr.corp.intel.com 5.15.16 #1 SMP PREEMPT Tue Jan 25 02:30:36 EST 2022 x86_64 x86_64 x86_64 GNU/Linux
+************Memory Config*********************************
+	External Clock: 100 MHz
+	Max Speed: 3500 MHz
+	Current Speed: 2700 MHz
+	External Clock: 100 MHz
+	Max Speed: 3500 MHz
+	Current Speed: 2700 MHz
+	Input Voltage Range Switching: Auto-switch
+	Input Voltage Range Switching: Auto-switch
+	Range Size: 2 GB
+	Range Size: 254 GB
+	Range Size: 256 GB
+		MTRR (Memory type range registers)
+		MTRR (Memory type range registers)

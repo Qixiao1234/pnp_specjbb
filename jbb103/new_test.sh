@@ -54,9 +54,10 @@ echo "NURSERY_SIZE is $NURSERY_SIZE"
 RUN_TYPE=$1
 KITVER=$2
 ID_TAG=$3
+
 JVM=$4
-USR_JVM_OPTS=$5
-DATA=$6
+USR_JVM_OPTS=$6
+DATA=$7
 core_scaling=${10}
 
 
@@ -70,16 +71,16 @@ echo  "run type is HBIR or HBIR_RT"
 elif [ $1 = "PRESET" ] && [ $# = 15 ]; then
 echo  "run type is PRESET"
   PRESET_IR=$7
-  DURATION=$(echo "$8*1000" | bc)
+  DURATION=$(echo "$9*1000" | bc)
   sed -e "s/<<T1>>/$TIER1/g" -e "s/<<T2>>/$TIER2/g" -e "s/<<T3>>/$TIER3/g" -e "s/<<GROUP_COUNT>>/$GROUPCOUNT/g" -e "s/<<PRESET_IR>>/$PRESET_IR/g" -e "s/<<DURATION>>/$DURATION/g" .PRESET.props > specjbb2015.props
 
 
-elif [ $1 = "LOADLEVEL" ] && [ $# = 15 ]; then
+elif [ $1 = "LOADLEVEL" ] && [ $# = 14 ] || [ $# = 15] ; then
 echo  "run type is LOADLEVEL"
-  RT_CURVE=$7
-  LL_DURATION_MIN=$(echo "$8*1000" | bc)
-  LL_DURATION_MAX=$(echo "$8*1000" | bc)
-  RT_CURVE_STEP=$9
+  RT_CURVE=$8
+  LL_DURATION_MIN=$(echo "$9*1000" | bc)
+  LL_DURATION_MAX=$(echo "$9*1000" | bc)
+  RT_CURVE_STEP=${10}
   sed -e "s/<<T1>>/$TIER1/g" -e "s/<<T2>>/$TIER2/g" -e "s/<<T3>>/$TIER3/g" -e "s/<<GROUP_COUNT>>/$GROUPCOUNT/g" -e "s/<<LL_DUR_MIN>>/$LL_DURATION_MIN/g" -e "s/<<LL_DUR_MAX>>/$LL_DURATION_MAX/g" -e "s/<<RT_CURVE_START>>/$RT_CURVE/g" -e "s/<<RT_CURVE_STEP>>/$RT_CURVE_STEP/g" .LOADLEVELS.props > specjbb2015.props
 
 
@@ -137,7 +138,7 @@ JAVA_OPTS="-showversion -XX:ParallelGCThreads=$GC_THREADS -Xms$HEAP_SIZE -Xmx$HE
   pushd $RESULTDIR
 
   SUT_INFO=sut.txt
-  echo " " > $SUT_INFO  echo " " > $SUT_INFO
+  echo " " > $SUT_INFO
   echo "##############################################################" >> $SUT_INFO
   echo "##########system Options ####################################" >> $SUT_INFO
   echo "##########system Options ####################################"
@@ -202,11 +203,12 @@ JAVA_OPTS="-showversion -XX:ParallelGCThreads=$GC_THREADS -Xms$HEAP_SIZE -Xmx$HE
 
    # Log system info to the SUT_INFO
 
+  # cd $jar_path
   pwd
   #echo "************Latencies*********************************">>$SUT_INFO
   echo "***running svr_info*********************************"
-  		chmod +x ../svrinfo-master/svr_info.sh
-		../svrinfo-master/svr_info.sh
+  		chmod +x ../../../svrinfo-master/svr_info.sh
+		../../../svrinfo-master/svr_info.sh
   #/workloads/SPECjbb2015/svrinfo-master/svr_info.sh
 
         # Result html generator
@@ -221,14 +223,15 @@ JAVA_OPTS="-showversion -XX:ParallelGCThreads=$GC_THREADS -Xms$HEAP_SIZE -Xmx$HE
 
         now="$(date)"
         sed -i -e "s/<<DATE>>/$now/g" config/template-M.raw
-
-        ../PopulateRunDetails.pl  # populate server details into template-M.raw
+	
+	chmod +x ../../../PopulateRunDetails.pl
+        ../../../PopulateRunDetails.pl  # populate server details into template-M.raw
 
   echo "***running mlc for Latencies*********************************"
-  chmod +x ../mlc
-  ../mlc >>$SUT_INFO
+  chmod +x ../../../mlc
+  ../../../mlc >>$SUT_INFO
   echo "***running mlc loaded Latencies*********************************"
-  ../mlc --loaded_latency -W2 >>$SUT_INFO
+  ../../../mlc --loaded_latency -W2 >>$SUT_INFO
   echo "">>$SUT_INFO
   echo "">>$SUT_INFO
   echo "************Memory Config*********************************">>$SUT_INFO
@@ -260,6 +263,9 @@ JAVA_OPTS="-showversion -XX:ParallelGCThreads=$GC_THREADS -Xms$HEAP_SIZE -Xmx$HE
  OUT=controller.out
  LOG=controller.log
  TI_JVM_COUNT=1
+
+
+cd $RESULTDIR
 
  uname -a >> $SUT_INFO;
  numactl --hardware >> $SUT_INFO;
@@ -303,7 +309,7 @@ JAVA_OPTS="-showversion -XX:ParallelGCThreads=$GC_THREADS -Xms$HEAP_SIZE -Xmx$HE
        echo "******$node ******* $NewNode****"
 
        NUMAON="numactl --cpunodebind=$NewNode --localalloc"
-       NUMAON0="numactl -C ${10} --localalloc"
+       NUMAON0="numactl -C ${15} --localalloc"
        #NUMAON1="numactl -C 36-71 --localalloc"
        #NUMAON="numactl --cpunodebind=$NewNode --membind=1"
 
@@ -324,7 +330,7 @@ JAVA_OPTS="-showversion -XX:ParallelGCThreads=$GC_THREADS -Xms$HEAP_SIZE -Xmx$HE
            #$NUMAON $JAVA $OPTS_TI $SEPTx -Xlog:gc*:file=$TI_NAME.GC.log -jar ../specjbb2015.jar -m TXINJECTOR -G=$GROUPID -J=$JVMID > $TI_NAME.log 2>&1 &
            #$NUMAON $JAVA $OPTS_TI $SEPTx -jar ../specjbb2015.jar -m TXINJECTOR -G=$GROUPID -J=$JVMID > $TI_NAME.log 2>&1 &
 #		   $NUMAON $JAVA $OPTS_TI $SEPTx -jar /root/SPECjbb2015-master/jbb103/specjbb2015.jar -m TXINJECTOR -G=$GROUPID -J=$JVMID > $TI_NAME.log 2>&1 &
-			if [ ${15} == "persocket" ]; then
+			if [ $5 == "persocket" ]; then
 				$NUMAON $JAVA $OPTS_TI $SEPTx -jar $jar_path/specjbb2015.jar -m TXINJECTOR -G=$GROUPID -J=$JVMID > $TI_NAME.log 2>&1 &
 			else
 				if [ $GROUPID == "Group1" ]; then
@@ -352,7 +358,7 @@ JAVA_OPTS="-showversion -XX:ParallelGCThreads=$GC_THREADS -Xms$HEAP_SIZE -Xmx$HE
 #         echo "$NUMAON $JAVA $OPTS_BE -jar ../specjbb2015.jar -m BACKEND -G=$GROUPID -J=$JVMID" >>$SUT_INFO
           #$NUMAON $JAVA $SEPBE $OPTS_BE -jar ../specjbb2015.jar -m BACKEND -G=$GROUPID -J=$JVMID > $BE_NAME.log 2>&1 &
 #		   $NUMAON $JAVA $SEPBE $OPTS_BE -jar /root/SPECjbb2015-master/jbb103/specjbb2015.jar -m BACKEND -G=$GROUPID -J=$JVMID > $BE_NAME.log 2>&1 &
-		   if [ ${15} == "persocket" ]; then
+		   if [ $5 == "persocket" ]; then
 				$NUMAON $JAVA $SEPBE $OPTS_BE -jar $jar_path/specjbb2015.jar -m BACKEND -G=$GROUPID -J=$JVMID > $BE_NAME.log 2>&1 &
 		   else
 			if [ $GROUPID == "Group1" ]; then
@@ -397,7 +403,7 @@ JAVA_OPTS="-showversion -XX:ParallelGCThreads=$GC_THREADS -Xms$HEAP_SIZE -Xmx$HE
    # [[ $c1 == INFO ]] && echo "$var$c2"
    #done < SAMPLE_DIVISOR
 
-  cp -r $RESULTDIR /result
+  cp -r $RESULTDIR /result_$KITVER
 
 exit 0
 

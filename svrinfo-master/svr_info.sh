@@ -31,22 +31,22 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # CHECK FOR PYTHON INSTALL
-if ! [ -x "$(command -v python)" ]; then
+if ! [ -x "$(command -v python3)" ]; then
   echo "Error: python not found." >&2
   echo "Python version >=2.7.5 or >=3.2 is required."
   exit 1
 fi
 
 # CHECK FOR MINIMUM REQUIRED PYTHON VERSION
-python -c 'import sys; exit(0 if (sys.version_info >= (2, 7, 5) and sys.version_info < (3, 0)) or sys.version_info >= (3, 2) else 1)'
+python3 -c 'import sys; exit(0 if (sys.version_info >= (2, 7, 5) and sys.version_info < (3, 0)) or sys.version_info >= (3, 2) else 1)'
 if [ $? -ne 0 ]; then
-  python -V
+  python3 -V
   echo "Error: Python version >=2.7.5 or >=3.2 is required."
   exit 1
 fi
 
 # CHECK FOR MINIMUM REQUIRED KERNEL VERSION
-python -c 'import platform; exit(0 if (int(platform.release().split(".")[0]) >= 3) else 1)'
+python3 -c 'import platform; exit(0 if (int(platform.release().split(".")[0]) >= 3) else 1)'
 if [ $? -ne 0 ]; then
   uname -r
   echo "Error: Linux Kernel version >=3.0 is required."
@@ -254,7 +254,7 @@ svr_run() {
 
 gen_report() {
   \rm -f $RUN_DIR/out/svr_info.$1
-  python $SCRIPT_DIR/bin/$1_report.py -i $RUN_DIR/out/svr_info.txt -o $RUN_DIR/out/svr_info.$1
+  python3 $SCRIPT_DIR/bin/$1_report.py -i $RUN_DIR/out/svr_info.txt -o $RUN_DIR/out/svr_info.$1
   if [ ! -f $RUN_DIR/out/svr_info.$1 ];then echo "$1_report failed";return;fi
   \cp $RUN_DIR/out/svr_info.$1 .
   echo "svr_info.$1 report generated."
@@ -266,7 +266,7 @@ serve_html() {
     hn=`hostname`
     echo "Access html report here: http://$hn:$PORT/svr_info.html" 
     echo "CTRL-C to exit." 
-    python -m SimpleHTTPServer $PORT >/dev/null 2>&1
+    python3 -m SimpleHTTPServer $PORT >/dev/null 2>&1
     popd >/dev/null
   fi
 }
